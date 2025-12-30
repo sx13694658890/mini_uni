@@ -1,0 +1,150 @@
+{
+  "src": {
+    "description": "项目入口文件夹",
+    "tooltip": "项目入口文件夹，包含所有源代码"
+  },
+  "scripts": {
+    "description": "项目脚本文件夹",
+    "tooltip": "项目脚本文件夹，包含所有脚本代码"
+  },
+  "scripts/sub-scan": {
+    "description": "项目子包扫描脚本",
+    "tooltip": "项目子包扫描脚本，用于扫描项目子包"
+  },
+  "src/api": {
+    "description": "项目API",
+    "tooltip": "项目API存放位置"
+  },
+  "src/api/instance": {
+    "description": "请求配置实例",
+    "tooltip": "请求配置脚本文件夹，包含所有请求配置脚本代码"
+  },
+  "src/api/modules": {
+    "description": "按照模块拆分接口",
+    "tooltip": "按照模块拆分接口，每个模块包含多个接口"
+  },
+  "src/api/modules/auth": {
+    "description": "认证模块接口",
+    "tooltip": "type存放类型文件"
+  },
+  "src/hooks": {
+    "description": "项目hooks",
+    "tooltip": "项目hooks存放位置"
+  },
+  "src/layouts": {
+    "description": "项目布局组件",
+    "tooltip": "项目布局组件存放位置"
+  },
+  "src/pages": {
+    "description": "项目页面",
+    "tooltip": "项目页面存放位置"
+  },
+  "src/pages-sub": {
+    "description": "项目子包页面",
+    "tooltip": "项目子包页面存放位置"
+  },
+  "src/utils": {
+    "description": "项目工具函数",
+    "tooltip": "项目工具函数存放位置"
+  },
+  "src/static": {
+    "description": "项目静态资源",
+    "tooltip": "项目静态资源存放位置"
+  },
+  "src/store": {
+    "description": "项目状态管理",
+    "tooltip": "项目状态管理存放位置"
+  },
+  "src/styles": {
+    "description": "项目样式文件夹",
+    "tooltip": "项目样式文件夹，包含所有样式代码"
+  },
+  "src/styles/theme": {
+    "description": "项目主题样式文件夹",
+    "tooltip": "项目主题样式文件夹，包含所有主题样式代码"
+  },
+  "src/App.vue": {
+    "description": "项目入口组件",
+    "tooltip": "项目入口组件"
+  },
+  "src/main.ts": {
+    "description": "项目入口脚本",
+    "tooltip": "项目入口脚本，包含所有项目初始化代码"
+  },
+  "src/env.d.ts": {
+    "description": "环境变量类型声明",
+    "tooltip": "环境变量类型声明文件"
+  },
+  "src/shime-uni.d.ts": {
+    "description": "uni-app文件类型声明",
+    "tooltip": "uni-app文件类型声明文件"
+  },
+  "src/uni.scss": {
+    "description": "uni-app全局样式",
+    "tooltip": "uni-app全局样式文件"
+  },
+  "src/manifest.json": {
+    "description": "uni-app配置文件",
+    "tooltip": "uni-app配置文件(不需要手动修改)"
+  },
+  "src/pages.json": {
+    "description": "uni-app页面配置文件",
+    "tooltip": "uni-app页面配置文件(不需要手动修改)"
+  },
+  "svgs": {
+    "description": "项目svg文件夹",
+    "tooltip": "项目svg文件夹，包含所有svg代码,自动生成class"
+  },
+  "index.html": {
+    "description": "uniapp入口",
+    "tooltip": "uniapp入口文件(不需要手动修改)"
+  },
+  "manifest.config.ts": {
+    "description": "项目配置文件",
+    "tooltip": "自动同步项目"
+  },
+  ".npmrc": {
+    "description": "npm配置文件",
+    "tooltip": "npm配置文件(不需要手动修改)"
+  },
+  ".nvmrc": {
+    "description": "nvm配置文件",
+    "tooltip": "nvm配置文件(不需要手动修改)"
+  },
+  "eslint.config.mjs": {
+    "description": "eslint配置文件",
+    "tooltip": "eslint配置文件(不需要手动修改)"
+  },
+  "taze.config.js": {
+    "description": "taze配置文件",
+    "tooltip": "taze配置文件(不需要手动修改)"
+  },
+  "pages.config.ts": {
+    "description": "uni-app页面配置文件",
+    "tooltip": "自动同步项目"
+  },
+  "shims-uni.d.ts": {
+    "description": "vue文件类型声明",
+    "tooltip": "vue文件类型声明文件"
+  },
+  "uni-pages.d.ts": {
+    "description": "页面路由类型声明",
+    "tooltip": "页面路由类型声明文件"
+  },
+  "uno.config.ts": {
+    "description": "unocss配置文件",
+    "tooltip": ""
+  },
+  "env": {
+    "description": "环境变量文件",
+    "tooltip": "环境变量文件"
+  },
+  "env/.env.production": {
+    "description": "生产环境变量文件",
+    "tooltip": "生产环境变量文件"
+  },
+  "env/.env.development": {
+    "description": "开发环境变量文件",
+    "tooltip": "开发环境变量文件"
+  }
+}
