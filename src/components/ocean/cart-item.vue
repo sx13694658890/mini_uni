@@ -42,13 +42,13 @@ function increase() {
         </view>
         <view class="stepper">
           <view class="stepper-btn" @tap.stop="decrease">
-            <u-icon name="minus" color="#001e40" size="12" />
+            <u-icon name="minus" color="#001e40" size="10" />
           </view>
           <text class="stepper-num">
             {{ item.quantity }}
           </text>
           <view class="stepper-btn" @tap.stop="increase">
-            <u-icon name="plus" color="#001e40" size="12" />
+            <u-icon name="plus" color="#001e40" size="10" />
           </view>
         </view>
       </view>
@@ -67,7 +67,6 @@ function increase() {
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 51, 102, 0.06);
   border: 1px solid rgba(195, 198, 209, 0.2);
-  overflow: hidden;
 }
 
 .cart-image {
@@ -84,7 +83,6 @@ function increase() {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
 }
 
 .cart-info {
@@ -136,10 +134,8 @@ function increase() {
 .cart-bottom {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
   margin-top: 8px;
-  width: 100%;
   min-width: 0;
 }
 
@@ -164,26 +160,27 @@ function increase() {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 2px 6px;
+  gap: 2px;
+  padding: 1px 4px;
+  margin-left: auto;
   background: #f0f3ff;
   border-radius: 999px;
   border: 1px solid rgba(195, 198, 209, 0.3);
 }
 
 .stepper-btn {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .stepper-num {
-  min-width: 16px;
-  padding: 0 2px;
+  min-width: 14px;
+  padding: 0 1px;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   color: #111c2d;
 }

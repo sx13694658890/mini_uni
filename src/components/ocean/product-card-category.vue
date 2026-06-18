@@ -48,7 +48,7 @@ function handleAdd(product: IProduct) {
           </text>
         </view>
         <view class="add-btn" @tap.stop="handleAdd(product)">
-          <u-icon name="plus" color="#fff" size="14" />
+          <u-icon name="plus" color="#fff" size="12" />
         </view>
       </view>
     </view>
@@ -58,12 +58,14 @@ function handleAdd(product: IProduct) {
 <style lang="scss" scoped>
 .product-row {
   display: flex;
-  gap: 16px;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .product-image {
-  width: 128px;
-  height: 128px;
+  width: 96px;
+  height: 96px;
   border-radius: 12px;
   flex-shrink: 0;
   border: 1px solid rgba(195, 198, 209, 0.2);
@@ -75,7 +77,7 @@ function handleAdd(product: IProduct) {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 4px 0;
+  padding: 4px 4px 4px 0;
 }
 
 .product-info {
@@ -133,8 +135,8 @@ function handleAdd(product: IProduct) {
 .product-bottom {
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
   gap: 8px;
+  min-width: 0;
 }
 
 .price-wrap {
@@ -163,8 +165,10 @@ function handleAdd(product: IProduct) {
 }
 
 .add-btn {
-  width: 32px;
-  height: 32px;
+  flex-shrink: 0;
+  margin-left: auto;
+  width: 28px;
+  height: 28px;
   border-radius: 999px;
   background: #fe7e4f;
   display: flex;
