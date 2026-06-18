@@ -1,20 +1,25 @@
 import type { UnResponse } from '@uni-helper/uni-network'
 import { useUserStore } from '~/store'
 
-export function responseInterceptors(response: UnResponse<{ code: number, msg: string }>) {
+interface ApiResponse {
+  code: number
+  msg: string
+}
+
+export function responseInterceptors(response: UnResponse) {
   uni.hideLoading()
-  console.log('response======', response)
-  if (typeof response.data === 'string') { // 可能存在response为字符串
+  if (typeof response.data === 'string') {
     response.data = JSON.parse(response.data)
   }
+  const data = response.data as ApiResponse
   if (response.status === 200) {
-    if (response.data && response.data.code !== 200) {
+    if (data && data.code !== 200) {
       uni.showToast({
-        title: response.data.msg,
+        title: data.msg,
         icon: 'none',
         duration: 2000,
       })
-      return Promise.reject(response.data)
+      return Promise.reject(data)
     }
     return response
   }

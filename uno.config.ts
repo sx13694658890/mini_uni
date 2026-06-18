@@ -2,7 +2,6 @@ import { defineConfig, presetIcons, transformerVariantGroup } from 'unocss'
 import { presetWeapp } from 'unocss-preset-weapp'
 
 import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
-import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 
 const { presetWeappAttributify, transformerAttributify } = extractorAttributify()
 
@@ -32,11 +31,6 @@ export default defineConfig({
       },
       scale: 24,
       unit: 'rpx',
-      collections: {
-        custom: FileSystemIconLoader(
-          './svgs',
-        ),
-      },
     }),
   ],
   theme: {

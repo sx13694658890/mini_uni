@@ -15,30 +15,4 @@ export default defineUniPages({
     navigationBarTitleText: '标题',
     backgroundColor: '#F5F8FA',
   },
-  tabBar: {
-    color: '#60687e',
-    selectedColor: '#2855B3',
-    backgroundColor: '#ffffff',
-    borderStyle: 'white',
-    list: [
-      {
-        pagePath: 'pages/home/index',
-        text: '首页',
-        iconPath: 'static/images/tab/home.png',
-        selectedIconPath: 'static/images/tab/home-select.png',
-      },
-      {
-        pagePath: 'pages/recommend/index',
-        text: '家医推荐',
-        iconPath: 'static/images/tab/doctor.png',
-        selectedIconPath: 'static/images/tab/doctor-select.png',
-      },
-      {
-        pagePath: 'pages/mine/index',
-        text: '我的',
-        iconPath: 'static/images/tab/mine.png',
-        selectedIconPath: 'static/images/tab/mine-select.png',
-      },
-    ],
-  },
 })
