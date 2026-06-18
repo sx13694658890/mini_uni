@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>海味鲜 Ocean Fresh - 个人中心</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#003366",
+                    "on-tertiary-container": "#8c9ea9",
+                    "on-secondary-container": "#6b1f00",
+                    "outline-variant": "#c3c6d1",
+                    "secondary": "#a43c12",
+                    "on-secondary-fixed": "#380c00",
+                    "surface-container": "#e7eeff",
+                    "on-primary": "#ffffff",
+                    "surface": "#f9f9ff",
+                    "inverse-primary": "#a7c8ff",
+                    "on-primary-fixed": "#001b3c",
+                    "on-background": "#111c2d",
+                    "secondary-container": "#fe7e4f",
+                    "primary-fixed": "#d5e3ff",
+                    "on-secondary-fixed-variant": "#822800",
+                    "tertiary-fixed": "#d3e5f1",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#25353e",
+                    "inverse-surface": "#263143",
+                    "tertiary": "#0f2028",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#d8e3fb",
+                    "secondary-fixed": "#ffdbcf",
+                    "on-surface": "#111c2d",
+                    "outline": "#737780",
+                    "on-tertiary-fixed": "#0c1e26",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "surface-tint": "#3a5f94",
+                    "surface-container-low": "#f0f3ff",
+                    "surface-variant": "#d8e3fb",
+                    "surface-dim": "#cfdaf2",
+                    "surface-bright": "#f9f9ff",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "primary": "#001e40",
+                    "on-primary-container": "#799dd6",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#b7c9d5",
+                    "on-surface-variant": "#43474f",
+                    "on-secondary": "#ffffff",
+                    "background": "#f9f9ff",
+                    "secondary-fixed-dim": "#ffb59c",
+                    "on-tertiary-fixed-variant": "#384953",
+                    "surface-container-high": "#dee8ff",
+                    "inverse-on-surface": "#ecf1ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "32px",
+                    "gutter": "12px",
+                    "container-margin": "16px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "stack-lg": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "price-display": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "price-display": ["22px", {"lineHeight": "22px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9ff;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .vip-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #001e40 100%);
+        }
+        .shimmer {
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- Top App Bar (Shared Component Strategy) -->
+<header class="fixed top-0 w-full z-50 bg-surface shadow-sm flex items-center justify-between px-4 h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">海味鲜 Ocean Fresh</h1>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</header>
+<main class="pt-20 pb-32 max-w-md mx-auto px-4 space-y-6">
+<!-- User Profile Section -->
+<section class="flex items-center space-x-4 py-4">
+<div class="relative">
+<img class="w-20 h-20 rounded-full border-4 border-white shadow-md object-cover" data-alt="A professional high-end studio portrait of a customer, clean lighting, white background, cinematic style, reflecting a premium lifestyle associated with luxury seafood consumption. The aesthetic is bright and sophisticated, following the Ocean Fresh brand guidelines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcjrOXbBICF2GKzCqoCWeWlR8jEwY4UxMDV2LLzSp11hzwapD0Mj2XYpelvYmh9I7wtOqGXDDx3ObBlsgiL1Cp0owuvk0VIhwVzR_-FbnJxysRpsfIkm7XHue1Q1tzD-DBkUvP9hkM0yqzF9_pORtTHjiQxsPyHkR_Omd71oZPeOf_TQx218XUCagvNy5Gf1jW3iDXcriMoyucmaCiYZN2MdT9Rooh-XpSvdSGUcK21RYVJNPLh0zEOSf_z1zyfnomEDIb4TkMcGAN"/>
+<div class="absolute bottom-0 right-0 bg-secondary-container p-1 rounded-full border-2 border-white">
+<span class="material-symbols-outlined text-white text-[16px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">林先生</h2>
+<p class="font-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="phone_iphone">phone_iphone</span>
+                    138 **** 8888
+                </p>
+</div>
+</section>
+<!-- VIP Membership Card -->
+<section class="vip-gradient rounded-xl p-6 text-white shadow-xl relative overflow-hidden">
+<div class="shimmer absolute inset-0 pointer-events-none"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-headline-md text-headline-md">铂金会员</span>
+</div>
+<p class="font-label-sm text-on-primary-container text-[11px] opacity-80">尊享全球顶级产地优先权</p>
+</div>
+<span class="material-symbols-outlined opacity-50" data-icon="diamond">diamond</span>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs mb-1">
+<span>升级进度</span>
+<span>还需 420 里程</span>
+</div>
+<div class="w-full h-1.5 bg-white/20 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-3/4 shadow-[0_0_8px_rgba(254,126,79,0.8)]"></div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="bg-white/10 rounded-lg p-2 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary-container mb-1" data-icon="percent">percent</span>
+<span class="text-[10px] font-medium leading-tight">全场9.5折</span>
+</div>
+<div class="bg-white/10 rounded-lg p-2 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary-container mb-1" data-icon="bolt">bolt</span>
+<span class="text-[10px] font-medium leading-tight">优先配送</span>
+</div>
+<div class="bg-white/10 rounded-lg p-2 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary-container mb-1" data-icon="support_agent">support_agent</span>
+<span class="text-[10px] font-medium leading-tight">专属客服</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Balance & Top Up -->
+<section class="bg-white rounded-xl p-5 shadow-sm flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant">账户余额</p>
+<p class="font-price-display text-primary">¥ 2,840.00</p>
+</div>
+</div>
+<button class="bg-secondary px-6 py-2 rounded-full text-white font-bold text-sm active:scale-95 transition-transform shadow-md">
+                立即充值
+            </button>
+</section>
+<!-- Function List -->
+<section class="bg-white rounded-xl shadow-sm overflow-hidden">
+<div class="divide-y divide-outline-variant">
+<!-- My Orders -->
+<a class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors" href="#">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="package_2">package_2</span>
+<span class="font-body-md font-medium">我的订单</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+<!-- Shipping Address -->
+<a class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors" href="#">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="location_on">location_on</span>
+<span class="font-body-md font-medium">收货地址</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+<!-- My Reviews -->
+<a class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors" href="#">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="rate_review">rate_review</span>
+<span class="font-body-md font-medium">我的评价</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+<!-- Customer Support -->
+<a class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors" href="#">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="headset_mic">headset_mic</span>
+<span class="font-body-md font-medium">联系客服</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+<!-- Account Security -->
+<a class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors" href="#">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="shield_lock">shield_lock</span>
+<span class="font-body-md font-medium">账户与安全</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Logout Button -->
+<button class="w-full py-4 text-error font-medium bg-white rounded-xl shadow-sm active:bg-error/5 transition-colors">
+            退出当前账号
+        </button>
+</main>
+<!-- Bottom Navigation Bar (Shared Component Strategy) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface border-t border-outline-variant shadow-[0_-4px_10px_rgba(0,51,102,0.05)] flex justify-around items-center h-20 pb-safe px-4">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">首页</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-sm text-label-sm">分类</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-sm text-label-sm">购物车</span>
+</button>
+<!-- ACTIVE STATE: User Profile -->
+<button class="flex flex-col items-center justify-center text-primary font-bold active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">我的</span>
+</button>
+</nav>
+<script>
+        // Micro-interaction for buttons and cards
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('touchstart', () => {
+                el.classList.add('opacity-80');
+            });
+            el.addEventListener('touchend', () => {
+                el.classList.remove('opacity-80');
+            });
+        });
+    </script>
+</body></html>

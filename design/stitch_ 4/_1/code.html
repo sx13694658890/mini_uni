@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>联系客服 - 海味鲜 Ocean Fresh</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f9f9ff;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .ocean-gradient {
+            background: linear-gradient(135deg, #001e40 0%, #003366 100%);
+        }
+        .faq-transition {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.2s ease;
+            opacity: 0;
+        }
+        .faq-item.active .faq-transition {
+            max-height: 200px;
+            opacity: 1;
+            margin-top: 12px;
+        }
+        .faq-item.active .arrow-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#25353e",
+                        "primary-fixed": "#d5e3ff",
+                        "on-secondary-container": "#6b1f00",
+                        "on-primary-container": "#799dd6",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "secondary-fixed": "#ffdbcf",
+                        "secondary": "#a43c12",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9ff",
+                        "primary-container": "#003366",
+                        "outline-variant": "#c3c6d1",
+                        "surface-variant": "#d8e3fb",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#cfdaf2",
+                        "primary": "#001e40",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#d8e3fb",
+                        "on-secondary-fixed": "#380c00",
+                        "on-primary-fixed": "#001b3c",
+                        "tertiary-fixed-dim": "#b7c9d5",
+                        "on-tertiary-fixed-variant": "#384953",
+                        "outline": "#737780",
+                        "surface-tint": "#3a5f94",
+                        "inverse-surface": "#263143",
+                        "on-tertiary-fixed": "#0c1e26",
+                        "inverse-primary": "#a7c8ff",
+                        "tertiary-fixed": "#d3e5f1",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#8c9ea9",
+                        "on-surface": "#111c2d",
+                        "on-background": "#111c2d",
+                        "background": "#f9f9ff",
+                        "surface-container-low": "#f0f3ff",
+                        "surface": "#f9f9ff",
+                        "surface-container-high": "#dee8ff",
+                        "surface-container": "#e7eeff",
+                        "on-surface-variant": "#43474f",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#822800",
+                        "secondary-container": "#fe7e4f",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#0f2028",
+                        "inverse-on-surface": "#ecf1ff",
+                        "primary-fixed-dim": "#a7c8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "section-gap": "32px",
+                        "stack-lg": "24px",
+                        "container-margin": "16px",
+                        "gutter": "12px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "price-display": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "price-display": ["22px", {"lineHeight": "22px", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface shadow-sm flex items-center justify-between px-container-margin h-16">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary font-bold">联系客服</h1>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary">history</span>
+</button>
+</header>
+<main class="pt-20 pb-24 px-container-margin max-w-2xl mx-auto">
+<!-- Hero Branding Section -->
+<section class="mb-stack-lg text-center py-8">
+<div class="relative inline-block mb-4">
+<div class="w-24 h-24 rounded-full ocean-gradient flex items-center justify-center shadow-lg relative z-10">
+<span class="material-symbols-outlined text-white text-5xl" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+<div class="absolute -bottom-1 -right-1 w-8 h-8 bg-secondary-container rounded-full border-4 border-surface flex items-center justify-center">
+<span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+</div>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">您好，有什么可以帮您？</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">我们的专业团队随时为您提供支持，确保您的海味鲜体验完美无瑕。</p>
+</section>
+<!-- Quick Action Grid -->
+<div class="grid grid-cols-2 gap-gutter mb-section-gap">
+<button class="flex flex-col items-center justify-center p-stack-lg bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all active:scale-95 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center mb-3 group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">在线客服</span>
+<span class="text-[10px] text-on-surface-variant mt-1">即时回复</span>
+</button>
+<button class="flex flex-col items-center justify-center p-stack-lg bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all active:scale-95 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center mb-3 group-hover:bg-secondary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">call</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">拨打热线</span>
+<span class="text-[10px] text-on-surface-variant mt-1">400-888-0000</span>
+</button>
+</div>
+<!-- FAQ Section -->
+<section class="mb-section-gap">
+<div class="flex items-center justify-between mb-stack-md">
+<h3 class="font-headline-md text-headline-md text-primary">常见问题</h3>
+<a class="text-primary font-label-sm text-label-sm font-bold flex items-center" href="#">
+                    查看全部 <span class="material-symbols-outlined text-sm ml-1">chevron_right</span>
+</a>
+</div>
+<div class="space-y-3">
+<!-- FAQ Item 1 -->
+<div class="faq-item bg-surface-container-lowest rounded-xl p-4 shadow-sm cursor-pointer" onclick="this.classList.toggle('active')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">local_shipping</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">配送时效与冷链保障</span>
+</div>
+<span class="material-symbols-outlined arrow-icon transition-transform text-outline">expand_more</span>
+</div>
+<div class="faq-transition">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            为了确保产品的新鲜度，海味鲜全程使用专业航空冷链运输。一二线城市承诺下单后24-48小时内送达。每个包裹均配有干冰及温度传感器，实时监控配送环境。
+                        </p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="faq-item bg-surface-container-lowest rounded-xl p-4 shadow-sm cursor-pointer" onclick="this.classList.toggle('active')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">payments</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">退款及售后政策</span>
+</div>
+<span class="material-symbols-outlined arrow-icon transition-transform text-outline">expand_more</span>
+</div>
+<div class="faq-transition">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            生鲜类产品如因物流延迟导致的质量受损，请在收货后6小时内拍照联系在线客服，我们将核实情况后在1个工作日内原路退款或补发。
+                        </p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="faq-item bg-surface-container-lowest rounded-xl p-4 shadow-sm cursor-pointer" onclick="this.classList.toggle('active')">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">食材溯源查询</span>
+</div>
+<span class="material-symbols-outlined arrow-icon transition-transform text-outline">expand_more</span>
+</div>
+<div class="faq-transition">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            您可以在“我的订单”中点击对应商品，查看“溯源证书”。每一份海产品均拥有唯一的捕捞编码，涵盖捕捞海域、船只信息及进关检验结果。
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Assistance Card (Image Integration) -->
+<section class="relative rounded-2xl overflow-hidden mb-stack-lg aspect-[16/9] shadow-lg group">
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-all duration-300 z-10"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A professional high-end customer service background for a premium seafood brand. The image features a clean, bright minimalist office space with subtle hints of deep sea blue and coral orange accents. Soft light reflects off polished surfaces, creating a trustworthy and premium atmosphere. In the background, there's a large blurred window showing a serene coastal sunrise, reinforcing the freshness and origin narrative." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCyhVcOE3nRD5SknFJVcBmMiVW10GF9-qt6VqGUQeYTCdJcuAlO_SilKyy2PqiFqezuahdFxzHt9AZuOdy1t3MtuBlGy6FrCDzHzSUqEJbCnqQbB2kL6HyKqtCsrKXNSYVvKYZLL9PAdMCk4ikLmbWPYwcItph1jOs0hYXaAKOKO8dn_cB9HhMrLe8g0vJ6Zzi-bQ2YPiguUoA1jb_AGhT3uTU6kgkAeYRob_NkfVbfHqJp3fu7CQA6a-OCIh1eZXuRiVpY109g_Pwf')"></div>
+<div class="absolute bottom-0 left-0 p-6 z-20 w-full">
+<div class="inline-block px-3 py-1 bg-secondary rounded-full mb-3 shadow-lg">
+<span class="text-[10px] font-bold text-white uppercase tracking-wider">专属服务</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-white mb-2">尊享黑金会员通道</h4>
+<p class="font-label-sm text-label-sm text-white/90">为您提供1对1海洋主厨级售前咨询服务</p>
+</div>
+</section>
+</main>
+<!-- Bottom Contact Sticky Buttons -->
+<div class="fixed bottom-0 left-0 w-full z-50 glass-effect p-container-margin border-t border-outline-variant flex gap-gutter">
+<button class="flex-1 h-14 ocean-gradient text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-body-lg text-body-lg">咨询在线顾问</span>
+</button>
+<button class="w-14 h-14 bg-surface-container-high text-primary rounded-xl flex items-center justify-center shadow-sm border border-outline-variant active:scale-95 transition-transform">
+<span class="material-symbols-outlined">headset_mic</span>
+</button>
+</div>
+<!-- Feedback Interaction Script -->
+<script>
+        // Simple micro-interaction for FAQ selection
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                // Toggle current FAQ
+                const isActive = item.classList.contains('active');
+                
+                // Close all others
+                document.querySelectorAll('.faq-item').forEach(other => {
+                    other.classList.remove('active');
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Sticky header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.add('shadow-sm');
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

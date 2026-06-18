@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#25353e",
+                        "primary-fixed": "#d5e3ff",
+                        "on-secondary-container": "#6b1f00",
+                        "on-primary-container": "#799dd6",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "secondary-fixed": "#ffdbcf",
+                        "secondary": "#a43c12",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9ff",
+                        "primary-container": "#003366",
+                        "outline-variant": "#c3c6d1",
+                        "surface-variant": "#d8e3fb",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#cfdaf2",
+                        "primary": "#001e40",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#d8e3fb",
+                        "on-secondary-fixed": "#380c00",
+                        "on-primary-fixed": "#001b3c",
+                        "tertiary-fixed-dim": "#b7c9d5",
+                        "on-tertiary-fixed-variant": "#384953",
+                        "outline": "#737780",
+                        "surface-tint": "#3a5f94",
+                        "inverse-surface": "#263143",
+                        "on-tertiary-fixed": "#0c1e26",
+                        "inverse-primary": "#a7c8ff",
+                        "tertiary-fixed": "#d3e5f1",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#8c9ea9",
+                        "on-surface": "#111c2d",
+                        "on-background": "#111c2d",
+                        "background": "#f9f9ff",
+                        "surface-container-low": "#f0f3ff",
+                        "surface": "#f9f9ff",
+                        "surface-container-high": "#dee8ff",
+                        "surface-container": "#e7eeff",
+                        "on-surface-variant": "#43474f",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#822800",
+                        "secondary-container": "#fe7e4f",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#0f2028",
+                        "inverse-on-surface": "#ecf1ff",
+                        "primary-fixed-dim": "#a7c8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "section-gap": "32px",
+                        "stack-lg": "24px",
+                        "container-margin": "16px",
+                        "gutter": "12px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "price-display": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "price-display": ["22px", {"lineHeight": "22px", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 20%;
+            right: 20%;
+            height: 3px;
+            background-color: #003366;
+            border-radius: 99px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-on-surface shadow-sm flex items-center justify-between px-container-margin h-16">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full active:scale-95 transition-transform">menu</button>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed">海味鲜 Ocean Fresh</h1>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full active:scale-95 transition-transform">shopping_bag</button>
+</header>
+<main class="mt-16 pt-4">
+<!-- Sticky Tabs -->
+<div class="sticky top-16 z-40 bg-surface/80 backdrop-blur-md">
+<div class="flex justify-between px-container-margin py-3 border-b border-outline-variant/30">
+<button class="relative font-headline-md text-label-sm text-primary font-bold active-tab px-2">全部</button>
+<button class="relative font-headline-md text-label-sm text-on-surface-variant px-2">待付款</button>
+<button class="relative font-headline-md text-label-sm text-on-surface-variant px-2">待收货</button>
+<button class="relative font-headline-md text-label-sm text-on-surface-variant px-2">已完成</button>
+</div>
+</div>
+<div class="px-container-margin mt-stack-md flex flex-col gap-gutter">
+<!-- Order Card 1: Pending Receipt -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0_4px_15px_rgba(0,51,102,0.04)] border border-surface-container transition-transform active:scale-[0.98]">
+<div class="flex justify-between items-center mb-stack-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">calendar_today</span>
+<span class="font-label-sm text-on-surface-variant">2023-11-24 14:20</span>
+</div>
+<span class="font-label-sm text-secondary font-bold">待收货</span>
+</div>
+<div class="flex gap-4 mb-stack-md">
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A premium high-fidelity close-up of a freshly steamed Canadian Atlantic Lobster presented on a white marble slab. The vibrant coral red shell contrasts beautifully with the pristine white environment. Soft, atmospheric lighting emphasizes the glistening texture of the seafood, conveying immediate freshness and culinary excellence in a high-end light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYJcwosPrhfrFkNMsnxQ3tWP_5swtR35dXP4LbzXqNeZiq8c1zQ1DDYMpJQgbre2HULfUyFgdKc7Sr7I_v8dcVUZZDlyCzIBLk9bl6iVjRKaAXA5WhRODMH8iOt2VFR_AYa5Kh7cb7yL52vJ896_piLz06zvxsqLDUfel3RX44ALc8sRkNJ_Lz1AwKXb6fhr0JRMjEANP6rLAFD-QJEhOsDU5UsTvM7iTmQkMy8ItAUtBVWf1Km49FIKdmsuk1CGHcxMAuOYvF7x7A"/>
+</div>
+<div class="flex flex-col justify-between py-1 flex-1">
+<div>
+<h3 class="font-headline-md text-body-lg text-primary font-bold">大西洋波士顿龙虾</h3>
+<p class="font-label-sm text-on-surface-variant mt-1">产地: 加拿大 · 500-600g/只</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-label-sm text-on-surface-variant">数量: x2</span>
+<span class="font-price-display text-price-display text-secondary">¥398.00</span>
+</div>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-4 border-t border-outline-variant/20">
+<button class="px-5 py-2 rounded-full border border-primary text-primary font-label-sm hover:bg-surface-container-low transition-colors">查看物流</button>
+<button class="px-5 py-2 rounded-full bg-secondary text-on-secondary font-label-sm shadow-md active:scale-95 transition-transform">确认收货</button>
+</div>
+</div>
+<!-- Order Card 2: Completed -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0_4px_15px_rgba(0,51,102,0.04)] border border-surface-container transition-transform active:scale-[0.98]">
+<div class="flex justify-between items-center mb-stack-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">calendar_today</span>
+<span class="font-label-sm text-on-surface-variant">2023-11-20 18:05</span>
+</div>
+<span class="font-label-sm text-outline font-bold">已完成</span>
+</div>
+<div class="flex gap-4 mb-stack-md">
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A professional food photography shot of premium Alaskan King Crab legs arranged artistically on a bed of crushed ice. The lighting is bright and airy, highlighting the deep orange and white patterns of the shell. The background is a clean, minimalist blue-gray, reflecting a modern corporate and vital lifestyle brand identity focused on traceability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo_aaQt2adZ4grDUzX4jQ16ubJLgLf9YabByW3vVU_kep1giaWEcNVbmzVlv5TrLQsnoY-4ULnnrD2qcRNklDFmB8V4Xkx6yyQ3aLB_lddd7egErl_jG-kCfamhaoO7qyqfdcgsPoDXMdYY0Ad6-HzmC5wq4nZpDpegWdNURERbpApQgcPPmQVSAl-cc61wg1_lzhl0qMHSxcBQQBK1eO68-fOOHzzteXb97MJ86n9T8IaFGQU3LiAo_Bu4U04yl8yI_W4ijMkCsAv"/>
+</div>
+<div class="flex flex-col justify-between py-1 flex-1">
+<div>
+<h3 class="font-headline-md text-body-lg text-primary font-bold">阿拉斯加帝王蟹脚</h3>
+<p class="font-label-sm text-on-surface-variant mt-1">产地: 美国 · 极速冷冻</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-label-sm text-on-surface-variant">数量: x1</span>
+<span class="font-price-display text-price-display text-secondary">¥888.00</span>
+</div>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-4 border-t border-outline-variant/20">
+<button class="px-5 py-2 rounded-full border border-primary text-primary font-label-sm hover:bg-surface-container-low transition-colors">评价有礼</button>
+<button class="px-5 py-2 rounded-full bg-primary-container text-on-primary font-label-sm shadow-md active:scale-95 transition-transform">再次购买</button>
+</div>
+</div>
+<!-- Order Card 3: Multi-item Completed -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0_4px_15px_rgba(0,51,102,0.04)] border border-surface-container transition-transform active:scale-[0.98]">
+<div class="flex justify-between items-center mb-stack-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">calendar_today</span>
+<span class="font-label-sm text-on-surface-variant">2023-11-15 09:12</span>
+</div>
+<span class="font-label-sm text-outline font-bold">已完成</span>
+</div>
+<div class="flex gap-3 mb-stack-md overflow-x-auto pb-2 scrollbar-hide">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 border border-surface-container">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist shot of fresh Sashimi Grade Atlantic Salmon fillets on a light blue background. The lighting is high-key and professional, showcasing the vibrant orange color and fine white marbling of the fish. The image evokes a sense of pristine nature and immediate freshness, consistent with high-end seafood branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9tClZB4tN-Ixudwg1YJejjf9Hz7xFnKyGC6BIRt8XHq-JyuinXbxBqfjV4Tox11PtDkBSNyEd5pTGwtsBOWNy-EvPwWcgnF2PHOWZS_lhABzliTvIo7_WEFYaHzGKkmQKvXswKu8dSXNoqOuaiDXQc94E2pHojSR0Urj_RpqkjtXeQuyarizewK8n9Nq86Q25tVaGsng-jdSfVDhTHnbjhAv3IzU8df7mgZjrxGiwVpktvPNs0-R69xJG_lnnYMwJRnreLAGz8cPM"/>
+</div>
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 border border-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close-up of fresh giant Tiger Prawns displayed on a silver platter with lemon slices and herbs. The aesthetic is clean and appetizing, using a palette of deep sea blue and coral orange accents. The lighting is bright and clear, emphasizing the translucent quality of the fresh prawns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUn6zKrLmO_qii7jRlpXR_2V0sKO77hQIvviyPQSbZUoz5Vpt99MSpLE1zV1cdoFXWjsAJrDzYCrEDTBPfDpnA9g3g48bE-_AB7tFS5q7V2m0Mgt5XN-qSrl_MmyLPEkx8XH5eMtjvYNFYGkOW9VeoonvWzYnt6s5L8LmccL1xwi6m03F0LCpJFuy7RyXX8XYTut2rUieULQmdiV9-nyYxRC40QmBC2DCS--tbY3oS1NvOlkESQMkPEn0GFXpEmwN3FbYuPweoXdtK"/>
+</div>
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 border border-surface-container flex items-center justify-center bg-surface-container-low">
+<span class="text-on-surface-variant font-label-sm">+3 件</span>
+</div>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="font-label-sm text-on-surface-variant">共 5 件商品</span>
+<div class="text-right">
+<span class="font-label-sm text-on-surface-variant">合计: </span>
+<span class="font-price-display text-price-display text-secondary">¥1,256.00</span>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-4 border-t border-outline-variant/20">
+<button class="px-5 py-2 rounded-full border border-primary text-primary font-label-sm hover:bg-surface-container-low transition-colors">再次购买</button>
+</div>
+</div>
+<!-- Empty State Illustration (Hidden by default, for demonstration of UX) -->
+<div class="hidden flex-col items-center justify-center py-20 text-center">
+<span class="material-symbols-outlined text-[64px] text-surface-dim mb-4">inventory_2</span>
+<p class="font-headline-md text-on-surface-variant">暂无相关订单</p>
+<button class="mt-stack-lg px-8 py-3 bg-secondary text-on-secondary rounded-full font-label-sm">去逛逛</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-on-surface border-t border-outline-variant shadow-[0_-4px_10px_rgba(0,51,102,0.05)] flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">首页</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-label-sm text-label-sm">分类</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-sm text-label-sm">购物车</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">我的</span>
+<div class="w-1 h-1 bg-primary rounded-full mt-0.5"></div>
+</a>
+</nav>
+<script>
+        // Simple tab switching interaction
+        const tabs = document.querySelectorAll('.sticky button');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.classList.remove('text-primary', 'font-bold', 'active-tab');
+                    t.classList.add('text-on-surface-variant');
+                });
+                tab.classList.add('text-primary', 'font-bold', 'active-tab');
+                tab.classList.remove('text-on-surface-variant');
+                
+                // Optional: Add haptic-like scale effect
+                tab.style.transform = 'scale(0.95)';
+                setTimeout(() => tab.style.transform = 'scale(1)', 100);
+            });
+        });
+
+        // Interactivity for order cards
+        const cards = document.querySelectorAll('.bg-surface-container-lowest');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('shadow-[0_8px_25px_rgba(0,51,102,0.08)]');
+                card.style.transform = 'translateY(-2px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('shadow-[0_8px_25px_rgba(0,51,102,0.08)]');
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

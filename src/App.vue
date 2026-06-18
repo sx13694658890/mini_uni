@@ -8,4 +8,5 @@ onShow(() => {
 
 <style lang="scss">
 @import "uview-plus/index.scss";
+@import "~/styles/theme.scss";
 </style>

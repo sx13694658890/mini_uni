@@ -1,23 +1,34 @@
 :root,
 page {
-  // 主色调
-  --theme-primary: #2855B3;
+  /* Ocean Fresh Design Tokens */
+  --of-primary: #001e40;
+  --of-secondary: #a43c12;
+  --of-secondary-container: #fe7e4f;
+  --of-primary-container: #003366;
+  --of-surface: #f9f9ff;
+  --of-surface-container-lowest: #ffffff;
+  --of-surface-container: #e7eeff;
+  --of-surface-container-low: #f0f3ff;
+  --of-surface-container-high: #dee8ff;
+  --of-on-surface: #111c2d;
+  --of-on-surface-variant: #43474f;
+  --of-outline: #737780;
+  --of-outline-variant: #c3c6d1;
+  --of-secondary-fixed: #ffdbcf;
+  --of-on-secondary-fixed-variant: #822800;
+
+  /* Legacy theme aliases */
+  --theme-primary: #001e40;
   --theme-success: #3ed268;
   --theme-warning: #fe9831;
-  --theme-error: #fa4e62;
-
-  // 文字颜色
-  --theme-main-color: #333333;
-  --theme-content-color: #666666;
-  --theme-tips-color: #7e869a;
-  --theme-light-color: #bdc3d2;
+  --theme-error: #ba1a1a;
+  --theme-main-color: #111c2d;
+  --theme-content-color: #43474f;
+  --theme-tips-color: #737780;
+  --theme-light-color: #c3c6d1;
   --theme-disabled-color: #dce0eb;
-
-  // 背景颜色
   --theme-bg-color: #ffffff;
-  --theme-bg-color-secondary: #f8f9fa;
-  --theme-bg-page-color: #F5F8FA;
-
-  // 边框颜色
-  --theme-border-color: #e9ecef;
+  --theme-bg-color-secondary: #f0f3ff;
+  --theme-bg-page-color: #f9f9ff;
+  --theme-border-color: #c3c6d1;
 }

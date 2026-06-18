@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>收货地址 - Ocean Fresh</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#25353e",
+                        "primary-fixed": "#d5e3ff",
+                        "on-secondary-container": "#6b1f00",
+                        "on-primary-container": "#799dd6",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "secondary-fixed": "#ffdbcf",
+                        "secondary": "#a43c12",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9ff",
+                        "primary-container": "#003366",
+                        "outline-variant": "#c3c6d1",
+                        "surface-variant": "#d8e3fb",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#cfdaf2",
+                        "primary": "#001e40",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#d8e3fb",
+                        "on-secondary-fixed": "#380c00",
+                        "on-primary-fixed": "#001b3c",
+                        "tertiary-fixed-dim": "#b7c9d5",
+                        "on-tertiary-fixed-variant": "#384953",
+                        "outline": "#737780",
+                        "surface-tint": "#3a5f94",
+                        "inverse-surface": "#263143",
+                        "on-tertiary-fixed": "#0c1e26",
+                        "inverse-primary": "#a7c8ff",
+                        "tertiary-fixed": "#d3e5f1",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#8c9ea9",
+                        "on-surface": "#111c2d",
+                        "on-background": "#111c2d",
+                        "background": "#f9f9ff",
+                        "surface-container-low": "#f0f3ff",
+                        "surface": "#f9f9ff",
+                        "surface-container-high": "#dee8ff",
+                        "surface-container": "#e7eeff",
+                        "on-surface-variant": "#43474f",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#822800",
+                        "secondary-container": "#fe7e4f",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#0f2028",
+                        "inverse-on-surface": "#ecf1ff",
+                        "primary-fixed-dim": "#a7c8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "section-gap": "32px",
+                        "stack-lg": "24px",
+                        "container-margin": "16px",
+                        "gutter": "12px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "price-display": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "price-display": ["22px", {"lineHeight": "22px", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f9f9ff;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 15px -3px rgba(0, 51, 102, 0.08);
+        }
+        .address-card:active {
+            transform: scale(0.98);
+            transition: transform 0.1s ease;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar (Based on Shared Components JSON) -->
+<header class="fixed top-0 w-full z-50 bg-surface shadow-sm flex items-center justify-between px-container-margin h-16">
+<button class="text-primary hover:bg-surface-container-low transition-colors active:scale-95 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary font-bold">收货地址</h1>
+<div class="w-10"></div> <!-- Spacer for balance -->
+</header>
+<!-- Content Area -->
+<main class="flex-1 pt-20 pb-32 px-container-margin max-w-2xl mx-auto w-full space-y-stack-md">
+<!-- Address List Title/Stats -->
+<div class="flex items-center justify-between py-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">共 3 条地址</span>
+</div>
+<!-- Address Card 1: Default -->
+<div class="address-card bg-surface-container-lowest rounded-xl p-stack-md custom-shadow border border-transparent hover:border-primary-container transition-all">
+<div class="flex justify-between items-start">
+<div class="space-y-1 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-on-surface">陈先生</span>
+<span class="font-body-md text-body-md text-on-surface-variant">138 **** 8888</span>
+<span class="bg-primary-container text-on-primary-container px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider">默认</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        上海市浦东新区 陆家嘴环路1000号 恒生银行大厦 25层
+                    </p>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-end gap-stack-lg">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+<span class="font-label-sm text-label-sm">编辑</span>
+</button>
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+<span class="font-label-sm text-label-sm">删除</span>
+</button>
+</div>
+</div>
+<!-- Address Card 2 -->
+<div class="address-card bg-surface-container-lowest rounded-xl p-stack-md custom-shadow border border-transparent hover:border-primary-container transition-all">
+<div class="flex justify-between items-start">
+<div class="space-y-1 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-on-surface">李女士</span>
+<span class="font-body-md text-body-md text-on-surface-variant">139 **** 1234</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        北京市朝阳区 建国路81号 华贸购物中心 3楼 海味鲜精品店
+                    </p>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-end gap-stack-lg">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+<span class="font-label-sm text-label-sm">编辑</span>
+</button>
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+<span class="font-label-sm text-label-sm">删除</span>
+</button>
+</div>
+</div>
+<!-- Address Card 3 -->
+<div class="address-card bg-surface-container-lowest rounded-xl p-stack-md custom-shadow border border-transparent hover:border-primary-container transition-all">
+<div class="flex justify-between items-start">
+<div class="space-y-1 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-on-surface">张大厨</span>
+<span class="font-body-md text-body-md text-on-surface-variant">135 **** 0000</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        广东省深圳市南山区 粤海街道 科苑南路 2888号 阿里中心
+                    </p>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-end gap-stack-lg">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+<span class="font-label-sm text-label-sm">编辑</span>
+</button>
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+<span class="font-label-sm text-label-sm">删除</span>
+</button>
+</div>
+</div>
+<!-- Empty State Illustration (Subtle) -->
+<div class="pt-12 flex flex-col items-center opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-6xl" data-icon="location_on">location_on</span>
+<p class="font-label-sm text-label-sm mt-2">Ocean Fresh · 极速送达</p>
+</div>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 w-full p-container-margin bg-surface/80 backdrop-blur-md z-50">
+<div class="max-w-2xl mx-auto">
+<button class="w-full bg-secondary-container text-on-secondary-fixed-variant h-14 rounded-full font-headline-md text-headline-md flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-all hover:brightness-110">
+<span class="material-symbols-outlined" data-icon="add_location_alt">add_location_alt</span>
+                新增收货地址
+            </button>
+</div>
+</div>
+<!-- Background Decorative Element (Shader-like overlay) -->
+<div class="fixed inset-0 -z-10 overflow-hidden">
+<div class="absolute top-0 right-0 w-96 h-96 bg-surface-container-high rounded-full blur-[100px] -mr-48 -mt-48 opacity-50"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-surface-variant rounded-full blur-[80px] -ml-32 -mb-32 opacity-30"></div>
+</div>
+<script>
+        // Micro-interactions for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('touchstart', () => {
+                btn.style.transform = 'scale(0.96)';
+            });
+            btn.addEventListener('touchend', () => {
+                btn.style.transform = 'scale(1)';
+            });
+        });
+
+        // Simple delete animation logic
+        document.querySelectorAll('[data-icon="delete"]').forEach(delBtn => {
+            delBtn.parentElement.addEventListener('click', function() {
+                const card = this.closest('.address-card');
+                if(confirm('确定要删除这个地址吗？')) {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateX(20px)';
+                    setTimeout(() => {
+                        card.remove();
+                    }, 300);
+                }
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>我的评价 - 海味鲜 Ocean Fresh</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#25353e",
+                    "primary-fixed": "#d5e3ff",
+                    "on-secondary-container": "#6b1f00",
+                    "on-primary-container": "#799dd6",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#ffb59c",
+                    "secondary-fixed": "#ffdbcf",
+                    "secondary": "#a43c12",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f9f9ff",
+                    "primary-container": "#003366",
+                    "outline-variant": "#c3c6d1",
+                    "surface-variant": "#d8e3fb",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#cfdaf2",
+                    "primary": "#001e40",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#d8e3fb",
+                    "on-secondary-fixed": "#380c00",
+                    "on-primary-fixed": "#001b3c",
+                    "tertiary-fixed-dim": "#b7c9d5",
+                    "on-tertiary-fixed-variant": "#384953",
+                    "outline": "#737780",
+                    "surface-tint": "#3a5f94",
+                    "inverse-surface": "#263143",
+                    "on-tertiary-fixed": "#0c1e26",
+                    "inverse-primary": "#a7c8ff",
+                    "tertiary-fixed": "#d3e5f1",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#8c9ea9",
+                    "on-surface": "#111c2d",
+                    "on-background": "#111c2d",
+                    "background": "#f9f9ff",
+                    "surface-container-low": "#f0f3ff",
+                    "surface": "#f9f9ff",
+                    "surface-container-high": "#dee8ff",
+                    "surface-container": "#e7eeff",
+                    "on-surface-variant": "#43474f",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#822800",
+                    "secondary-container": "#fe7e4f",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#0f2028",
+                    "inverse-on-surface": "#ecf1ff",
+                    "primary-fixed-dim": "#a7c8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "section-gap": "32px",
+                    "stack-lg": "24px",
+                    "container-margin": "16px",
+                    "gutter": "12px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "price-display": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "price-display": ["22px", {"lineHeight": "22px", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f9f9ff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #111c2d;
+            padding-bottom: 100px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-star {
+            font-variation-settings: 'FILL' 1;
+            color: #fe7e4f;
+        }
+        .shadow-soft {
+            box-shadow: 0 4px 20px rgba(0, 51, 102, 0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-on-surface shadow-sm flex items-center justify-between px-container-margin h-16">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform hover:bg-surface-container-low p-2 rounded-full">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed">我的评价</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="active:scale-95 transition-transform hover:bg-surface-container-low p-2 rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</button>
+</div>
+</header>
+<main class="mt-20 px-container-margin">
+<!-- Pending Reviews Section -->
+<section class="mb-section-gap">
+<div class="flex items-center justify-between mb-stack-md">
+<h2 class="font-headline-md text-headline-md text-primary">待评价订单</h2>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm">2个待写</span>
+</div>
+<div class="flex flex-col gap-gutter">
+<!-- Pending Card 1 -->
+<div class="bg-surface-container-lowest p-stack-md rounded-xl shadow-soft flex items-center gap-stack-md border border-outline-variant/30 active:scale-[0.98] transition-transform">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close-up high-fidelity shot of premium Alaskan King Crab legs on a bed of crushed ice. The lighting is bright and crisp, emphasizing the vibrant orange and white textures of the shell. The background is a clean, minimalist white with a hint of deep sea blue, reflecting a high-end gourmet seafood market aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiMsHCRNBEUlF_cZmTlfettqUmpgfuSSDhU5ZA3jdxD8aS7tWkZHUYDehC-bWdT_9dTjNPDzJmMgYiZ6vfqimy8dGLae1IQIxgdHKW4kDFfvjm-YpgBl4gFaUiPQl0RY5VcW4VWFcdiz7NJnZNSehUUSgvTAww-BxhOPpxNkPRS0e6WSDyZRqv7pc61_TUaRDi__5wUiJaNPvyVqo-tnTY3lUytpk4CjeSNBIIhuieSr82UYLbmo8q401-ExirzH00JzMxTohaXttA"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-body-lg font-bold">阿拉斯加帝王蟹腿</h3>
+<p class="text-on-surface-variant font-label-sm text-label-sm">下单时间: 2023-11-20</p>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-sm">
+                                去评价
+                            </button>
+</div>
+<div class="flex mt-2 gap-1">
+<span class="material-symbols-outlined text-outline text-[20px]">star</span>
+<span class="material-symbols-outlined text-outline text-[20px]">star</span>
+<span class="material-symbols-outlined text-outline text-[20px]">star</span>
+<span class="material-symbols-outlined text-outline text-[20px]">star</span>
+<span class="material-symbols-outlined text-outline text-[20px]">star</span>
+<span class="ml-2 text-on-surface-variant font-label-sm text-label-sm">轻点星级打分</span>
+</div>
+</div>
+</div>
+<!-- Pending Card 2 -->
+<div class="bg-surface-container-lowest p-stack-md rounded-xl shadow-soft flex items-center gap-stack-md border border-outline-variant/30 active:scale-[0.98] transition-transform">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Fresh Atlantic Salmon fillets arranged artfully on a pristine marble surface. Tiny droplets of water glisten on the vibrant orange flesh, showcasing immediate freshness. The lighting is soft and natural, with cool blue-gray tones in the shadows to maintain the Ocean Fresh brand professional and premium feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeJRIdNfpPAK7UFpQUnasALwnBOKiyVal4Lh1gdrSzdJUPnxka43thLJF9UKMLiwBNm6FhIDY2kR5Z6QI9sk8LvkxgMBt6Isu_eXEL4PQltUCvbBkZhr0RbByIcjWsZxGZsGLVvCxfLRXg3Ry0tMd1qmE3Gz578DmnURGlVGmhBYdBZVCcb1QLOJpPshbnvmz1BYFm6Z60f5SJNkm-3KUvVDIaqrh1Ip2iE4LQ_KCGq56FWVdkdAqW-KGTMjFj3oH4Bro89fCTjBf-"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-body-lg font-bold">挪威三文鱼切片</h3>
+<p class="text-on-surface-variant font-label-sm text-label-sm">下单时间: 2023-11-18</p>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-sm">
+                                去评价
+                            </button>
+</div>
+<div class="flex mt-2 gap-1">
+<span class="material-symbols-outlined text-outline text-[20px]">star</span>
+<span class="material-symbols-outlined text-outline text-[20px]">star</span>
+<span class="material-symbols-outlined text-outline text-[20px]">star</span>
+<span class="material-symbols-outlined text-outline text-[20px]">star</span>
+<span class="material-symbols-outlined text-outline text-[20px]">star</span>
+<span class="ml-2 text-on-surface-variant font-label-sm text-label-sm">分享您的美味体验</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Past Reviews List -->
+<section>
+<div class="flex items-center justify-between mb-stack-md">
+<h2 class="font-headline-md text-headline-md text-primary">我的全部评价</h2>
+<button class="text-primary font-label-sm text-label-sm flex items-center gap-1">
+                    筛选 <span class="material-symbols-outlined text-[18px]">filter_list</span>
+</button>
+</div>
+<div class="flex flex-col gap-stack-lg">
+<!-- Review 1 -->
+<div class="bg-surface p-stack-md rounded-2xl border border-outline-variant/20 shadow-soft">
+<div class="flex items-center justify-between mb-stack-sm">
+<div class="flex items-center gap-2">
+<div class="bg-primary-container w-8 h-8 rounded-full flex items-center justify-center text-on-primary-container font-bold text-xs">
+                                JD
+                            </div>
+<div>
+<p class="font-bold font-body-md text-body-md">蓝鳍金枪鱼中腹</p>
+<p class="text-on-surface-variant text-[10px]">购买日期: 2023-10-12</p>
+</div>
+</div>
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined filled-star text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-star text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-star text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-star text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-star text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-on-surface font-body-md text-body-md mb-stack-md leading-relaxed">
+                        由于是全程冷链，到货非常新鲜！中腹的油脂分布均匀，入口即化，口感极其细腻。不愧是产地直供，以后海鲜都在这里买了。
+                    </p>
+<div class="grid grid-cols-3 gap-2 mb-stack-md">
+<div class="aspect-square rounded-lg overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="A professional food photography shot of sliced Bluefin Tuna Otoro on a minimalist black slate plate. The marbling is visible and glistening under soft studio lights. The scene is elegant and high-end, representing culinary excellence and absolute freshness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCINtUz1jcbweuacxpSzrDbtsd_S_K5qeBitBem-5qmUmd1vNlOwzAjqz_ylv87ZBF3Cm6S2QjqldXaT6_Jh8uv_62RfZQuJwWCSwYxkm7aoLZReQe1joqGo6FWVOyJ-Ho2AeV8lmQmYrQKU24-2iBAtkDYhqdwozLhSME-PxqEWuCDh0PXQYLJYwiRSNCWXaP9D4LmvcbOyuusECMn_c7EC6rbfOns5gM4UssejANuO4Dc7zWGw1kucKJ_zyd1_ufJ2Sl0rxuZtjQt"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="Close-up of a chilled sashimi platter featuring deep red tuna and pale pink yellowtail. Soft ice vapors rise from the base, creating an atmosphere of immediate freshness. The lighting is cool-toned and crisp, emphasizing the clean textures of the fish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3nXe14TQxOxvRa1OVL0NhRKlk9RlCdCIZSSwggLUNvbr0ckhlUia2s1K5EC3iqQWKumxTWyaXueEcsHcEtCwLnl8KWo7SFunF_1c8kccIuU0Mn7l2o9pDSal29-yB4ehrwreOsc5ZGFLQQzKJXAzguhVLx65ELS_3CLoToO_ffsKZvbTToj2Nxio1CJz7gl0Mhr3ittvGlQ29ChBDrjy2FlrSF5engL2J6_sOERWZWeZ0knih_LPxqpr-xB8fKOsjGJuq9-daObfv"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden shadow-sm relative">
+<img class="w-full h-full object-cover blur-[1px] brightness-75" data-alt="A high-end kitchen setting with a professional chef's hand delicately placing a garnish on a plate of fresh seafood. The background is slightly blurred with warm ambient lighting, while the focus is sharp on the vibrant orange and red colors of the seafood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRe_Tdn2rNs3TmhKD-uYiVhhUDvF7ZTzPxtWJJAXffjl2vKs0670O-P_vpoBLeK1AfLBIwUGOK2WquNCvakc1m1ZLEiV8_Ndhsch8UooI-RbaMwwbmJCcBQlOVnb860PTl0syhKDmGH28wHxZHTZKFfz14BUXYqM6O0p_XPreLawAf4yZ8OslSlZKAC7dj62nga2W3X1ehUnaOIrlR3DGLsUI-umdOrWuPuqATCkgNDt2xA5xp9vZRUzIi6W1QZR6vtXksHonbUeqY"/>
+<div class="absolute inset-0 flex items-center justify-center text-on-primary font-bold">+1</div>
+</div>
+</div>
+<div class="flex items-center gap-4 py-2 border-t border-outline-variant/10">
+<button class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm active:text-primary">
+<span class="material-symbols-outlined text-[18px]">thumb_up</span> 24
+                        </button>
+<button class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">chat_bubble_outline</span> 2
+                        </button>
+<div class="flex-grow"></div>
+<span class="bg-surface-container-high px-2 py-0.5 rounded font-label-sm text-[10px] text-primary">已入选精选</span>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface p-stack-md rounded-2xl border border-outline-variant/20 shadow-soft">
+<div class="flex items-center justify-between mb-stack-sm">
+<div class="flex items-center gap-2">
+<div class="bg-secondary-container w-8 h-8 rounded-full flex items-center justify-center text-on-secondary-container font-bold text-xs">
+                                WL
+                            </div>
+<div>
+<p class="font-bold font-body-md text-body-md">澳洲龙虾（活体）</p>
+<p class="text-on-surface-variant text-[10px]">购买日期: 2023-09-28</p>
+</div>
+</div>
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined filled-star text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-star text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-star text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-star text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline text-[16px]">star</span>
+</div>
+</div>
+<p class="text-on-surface font-body-md text-body-md mb-stack-md leading-relaxed">
+                        个头很大，收到的时候还是活蹦乱跳的。做成了蒜蓉粉丝蒸，肉质Q弹紧实。唯一遗憾是物流稍微慢了几个小时，但包装保护得很好。
+                    </p>
+<div class="grid grid-cols-2 gap-2 mb-stack-md">
+<div class="aspect-[4/3] rounded-lg overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A massive, vibrant red Australian Lobster presented on a large white platter, garnished with fresh herbs and lemon wedges. The lighting is high-key and bright, highlighting the intricate textures of the lobster shell. The overall look is professional and appetizing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXw5hsdvcGdsdBbSfz7viiG7Hy4cA7OV9_gNDMc6YTJv0G8SvKLoOXhBwP50KGypiz0P-HBOPC7oAagt5ph_JJdsg9ZZ4Kb2ruc_sYdLLI28dDi9RWUSiJuDH3NhDDs8kY65ljj7pHIeuZAbF293IS7PSi4Eq3tun4tVbsaYm4IepvcFRQVgKbhzVkJ6pohewqJoVaunJUmaAyFXf4Uir16-nqOByvLI8u9J6KGCarD1ypwm4dl5LqyKrjwlrtVXoNJdYVVEFv-8vB"/>
+</div>
+<div class="aspect-[4/3] rounded-lg overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A box filled with premium packaging materials and ice packs, showing the professional shipping method used for live seafood. The Ocean Fresh logo is subtly visible on a card inside. The image conveys trustworthiness and care in logistics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKQPzNVfw-Se1UEpzYrbq6m2mmbBq8O0P6kMh6OM5ZgvzlwaXtRS_d9MkdP9p0hGvCTDN5FMbIvukoNcGZi3hSpfD2AB_AB2DND2gz2ohq_iHnVCKojs69paIsMGETpUz3sthkEfMPABRVkmPmRccULMhbFYeJpPjBkLYAvYon0c_ZUCdpguCLnRLFucHlQF4DFqbmEf8AmOaMhifGWU3R9SIqFRRdrQ6LPf2Q9etwar_j0E26ANMVoENhQRY0m-scRWPVjBCeV5bg"/>
+</div>
+</div>
+<div class="flex items-center gap-4 py-2 border-t border-outline-variant/10">
+<button class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">thumb_up</span> 8
+                        </button>
+<button class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">chat_bubble_outline</span> 1
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-on-surface border-t border-outline-variant shadow-[0_-4px_10px_rgba(0,51,102,0.05)] flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">首页</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-label-sm text-label-sm">分类</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-sm text-label-sm">购物车</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">我的</span>
+<div class="w-1 h-1 bg-primary rounded-full mt-0.5"></div>
+</a>
+</nav>
+<script>
+        // Micro-interactions for stars
+        document.querySelectorAll('.flex.mt-2.gap-1').forEach(starContainer => {
+            const stars = starContainer.querySelectorAll('.material-symbols-outlined');
+            stars.forEach((star, index) => {
+                star.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    stars.forEach((s, i) => {
+                        if (i <= index) {
+                            s.classList.add('filled-star');
+                            s.style.fontVariationSettings = "'FILL' 1";
+                        } else {
+                            s.classList.remove('filled-star');
+                            s.style.fontVariationSettings = "'FILL' 0";
+                        }
+                    });
+                });
+            });
+        });
+
+        // Hover effects for cards
+        document.querySelectorAll('.bg-surface-container-lowest, .bg-surface').forEach(card => {
+            card.addEventListener('touchstart', () => {
+                card.style.transform = 'scale(0.98)';
+            });
+            card.addEventListener('touchend', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

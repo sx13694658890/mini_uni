@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>账户与安全 - 海味鲜 Ocean Fresh</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#25353e",
+                    "primary-fixed": "#d5e3ff",
+                    "on-secondary-container": "#6b1f00",
+                    "on-primary-container": "#799dd6",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#ffb59c",
+                    "secondary-fixed": "#ffdbcf",
+                    "secondary": "#a43c12",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f9f9ff",
+                    "primary-container": "#003366",
+                    "outline-variant": "#c3c6d1",
+                    "surface-variant": "#d8e3fb",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#cfdaf2",
+                    "primary": "#001e40",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#d8e3fb",
+                    "on-secondary-fixed": "#380c00",
+                    "on-primary-fixed": "#001b3c",
+                    "tertiary-fixed-dim": "#b7c9d5",
+                    "on-tertiary-fixed-variant": "#384953",
+                    "outline": "#737780",
+                    "surface-tint": "#3a5f94",
+                    "inverse-surface": "#263143",
+                    "on-tertiary-fixed": "#0c1e26",
+                    "inverse-primary": "#a7c8ff",
+                    "tertiary-fixed": "#d3e5f1",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#8c9ea9",
+                    "on-surface": "#111c2d",
+                    "on-background": "#111c2d",
+                    "background": "#f9f9ff",
+                    "surface-container-low": "#f0f3ff",
+                    "surface": "#f9f9ff",
+                    "surface-container-high": "#dee8ff",
+                    "surface-container": "#e7eeff",
+                    "on-surface-variant": "#43474f",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#822800",
+                    "secondary-container": "#fe7e4f",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#0f2028",
+                    "inverse-on-surface": "#ecf1ff",
+                    "primary-fixed-dim": "#a7c8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "section-gap": "32px",
+                    "stack-lg": "24px",
+                    "container-margin": "16px",
+                    "gutter": "12px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "price-display": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "price-display": ["22px", {"lineHeight": "22px", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f9f9ff;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .security-ring {
+            transition: stroke-dashoffset 1s ease-out;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface shadow-sm flex items-center justify-between px-container-margin h-16">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">账户与安全</h1>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary">help_outline</span>
+</button>
+</header>
+<main class="mt-20 px-container-margin space-y-stack-lg">
+<!-- Security Status Dashboard -->
+<section class="glass-card rounded-xl p-stack-lg flex flex-col items-center justify-center shadow-[0_4px_20px_rgba(0,51,102,0.08)] relative overflow-hidden">
+<!-- Decorative atmospheric background -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary-fixed opacity-20 blur-3xl rounded-full"></div>
+<div class="relative w-40 h-40 flex items-center justify-center mb-stack-md">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-high" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-secondary-container security-ring" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-dasharray="440" stroke-dashoffset="66" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-headline-lg text-headline-lg text-primary">85</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">安全分</span>
+</div>
+<div class="absolute -top-2 animate-float">
+<span class="material-symbols-outlined text-secondary-container bg-surface p-1 rounded-full shadow-md" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+</div>
+<div class="text-center">
+<h2 class="font-headline-md text-headline-md text-primary mb-1">您的账户安全等级：高</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">账户受保护良好，建议定期更换密码</p>
+</div>
+</section>
+<!-- Security Actions Grid -->
+<div class="grid grid-cols-1 gap-gutter">
+<!-- Security Item -->
+<button class="flex items-center justify-between p-stack-md bg-surface-container-lowest rounded-xl shadow-sm hover:bg-surface-container-low transition-colors group active:scale-[0.98] transition-transform">
+<div class="flex items-center gap-stack-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary">lock_reset</span>
+</div>
+<div class="text-left">
+<span class="block font-body-lg text-body-lg font-bold text-on-surface">修改密码</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">保护您的账号安全</span>
+</div>
+</div>
+<div class="flex items-center text-on-surface-variant">
+<span class="font-label-sm text-label-sm mr-1">定期更新</span>
+<span class="material-symbols-outlined text-body-lg">chevron_right</span>
+</div>
+</button>
+<!-- Security Item -->
+<button class="flex items-center justify-between p-stack-md bg-surface-container-lowest rounded-xl shadow-sm hover:bg-surface-container-low transition-colors group active:scale-[0.98] transition-transform">
+<div class="flex items-center gap-stack-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary">smartphone</span>
+</div>
+<div class="text-left">
+<span class="block font-body-lg text-body-lg font-bold text-on-surface">绑定手机</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">138 **** 8888</span>
+</div>
+</div>
+<div class="flex items-center text-on-surface-variant">
+<span class="font-label-sm text-label-sm mr-1 text-secondary font-bold">已绑定</span>
+<span class="material-symbols-outlined text-body-lg">chevron_right</span>
+</div>
+</button>
+<!-- Security Item -->
+<button class="flex items-center justify-between p-stack-md bg-surface-container-lowest rounded-xl shadow-sm hover:bg-surface-container-low transition-colors group active:scale-[0.98] transition-transform">
+<div class="flex items-center gap-stack-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary">badge</span>
+</div>
+<div class="text-left">
+<span class="block font-body-lg text-body-lg font-bold text-on-surface">实名认证</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">享受更完整的海鲜溯源服务</span>
+</div>
+</div>
+<div class="flex items-center text-on-surface-variant">
+<span class="font-label-sm text-label-sm mr-1">未认证</span>
+<span class="material-symbols-outlined text-body-lg">chevron_right</span>
+</div>
+</button>
+<!-- Security Item -->
+<button class="flex items-center justify-between p-stack-md bg-surface-container-lowest rounded-xl shadow-sm hover:bg-surface-container-low transition-colors group active:scale-[0.98] transition-transform">
+<div class="flex items-center gap-stack-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary">fingerprint</span>
+</div>
+<div class="text-left">
+<span class="block font-body-lg text-body-lg font-bold text-on-surface">生物识别</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">指纹/面容快速登录</span>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-6 bg-primary rounded-full relative flex items-center px-1">
+<div class="w-4 h-4 bg-white rounded-full ml-auto"></div>
+</div>
+</div>
+</button>
+</div>
+<!-- Devices Section -->
+<section class="space-y-stack-md">
+<h3 class="font-headline-md text-headline-md text-primary px-1">常用设备</h3>
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<div class="p-stack-md flex items-center justify-between border-b border-outline-variant">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-primary">phone_iphone</span>
+<div>
+<span class="block font-body-md text-body-md font-bold">iPhone 15 Pro (当前)</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">北京 · 上次登录 10分钟前</span>
+</div>
+</div>
+</div>
+<div class="p-stack-md flex items-center justify-between">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-on-surface-variant">desktop_mac</span>
+<div>
+<span class="block font-body-md text-body-md font-bold text-on-surface-variant">MacBook Pro 14"</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">北京 · 上次登录 2天前</span>
+</div>
+</div>
+<button class="text-error font-label-sm text-label-sm">移除</button>
+</div>
+</div>
+</section>
+<!-- Danger Zone -->
+<section class="pt-section-gap">
+<button class="w-full flex items-center justify-center gap-2 p-stack-md bg-error-container text-on-error-container rounded-xl font-bold active:scale-95 transition-transform">
+<span class="material-symbols-outlined">delete_forever</span>
+<span>注销账户</span>
+</button>
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant mt-stack-md px-container-margin">
+                注意：注销后所有数据将无法找回，请谨慎操作。
+            </p>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface shadow-[0_-4px_10px_rgba(0,51,102,0.05)] flex justify-around items-center h-20 pb-safe px-4 border-t border-outline-variant">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">首页</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-sm text-label-sm">分类</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-sm text-label-sm">购物车</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary font-bold active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">我的</span>
+</button>
+</nav>
+<script>
+        // Micro-interaction for the security ring on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const ring = document.querySelector('.security-ring');
+            // Animate from 440 (0%) to 66 (85%)
+            ring.style.strokeDashoffset = '440';
+            setTimeout(() => {
+                ring.style.strokeDashoffset = '66';
+            }, 100);
+        });
+
+        // Simple button active states feedback
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('touchstart', () => {
+                btn.classList.add('opacity-80');
+            });
+            btn.addEventListener('touchend', () => {
+                btn.classList.remove('opacity-80');
+            });
+        });
+    </script>
+</body></html>

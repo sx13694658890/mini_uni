@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>海味鲜 Ocean Fresh - 点餐</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c3c6d1",
+                    "primary-container": "#003366",
+                    "on-surface-variant": "#43474f",
+                    "on-surface": "#111c2d",
+                    "secondary-fixed": "#ffdbcf",
+                    "inverse-surface": "#263143",
+                    "primary": "#001e40",
+                    "tertiary-container": "#25353e",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#001b3c",
+                    "surface-tint": "#3a5f94",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#a7c8ff",
+                    "secondary": "#a43c12",
+                    "secondary-container": "#fe7e4f",
+                    "surface": "#f9f9ff",
+                    "surface-bright": "#f9f9ff",
+                    "on-secondary-fixed": "#380c00",
+                    "on-tertiary-container": "#8c9ea9",
+                    "on-secondary-fixed-variant": "#822800",
+                    "surface-variant": "#d8e3fb",
+                    "tertiary": "#0f2028",
+                    "surface-container-highest": "#d8e3fb",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#799dd6",
+                    "error": "#ba1a1a",
+                    "on-background": "#111c2d",
+                    "outline": "#737780",
+                    "on-tertiary-fixed": "#0c1e26",
+                    "background": "#f9f9ff",
+                    "surface-container-high": "#dee8ff",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#cfdaf2",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f0f3ff",
+                    "secondary-fixed-dim": "#ffb59c",
+                    "on-secondary-container": "#6b1f00",
+                    "primary-fixed": "#d5e3ff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#b7c9d5",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "inverse-on-surface": "#ecf1ff",
+                    "tertiary-fixed": "#d3e5f1",
+                    "surface-container": "#e7eeff",
+                    "on-tertiary-fixed-variant": "#384953"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "32px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "stack-lg": "24px",
+                    "gutter": "12px",
+                    "container-margin": "16px"
+            },
+            "fontFamily": {
+                    "price-display": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "price-display": ["22px", {"lineHeight": "22px", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f9f9ff;
+            color: #111c2d;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .active-dot::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            width: 4px;
+            height: 4px;
+            background-color: currentColor;
+            border-radius: 50%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface shadow-sm flex items-center justify-between px-container-margin h-16">
+<button aria-label="Menu" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">海味鲜 Ocean Fresh</h1>
+<button aria-label="Cart" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-95 transition-transform relative">
+<span class="material-symbols-outlined text-primary">shopping_bag</span>
+<span class="absolute top-1 right-1 bg-secondary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">2</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="pt-16 pb-20 flex h-screen overflow-hidden">
+<!-- Left Sidebar: Categories -->
+<aside class="w-24 bg-surface-container-low h-full flex-shrink-0 flex flex-col items-center py-4 border-r border-outline-variant/30 overflow-y-auto hide-scrollbar">
+<nav class="flex flex-col gap-2 w-full">
+<!-- All -->
+<button class="flex flex-col items-center justify-center py-4 w-full transition-colors relative group text-primary font-bold">
+<span class="text-label-sm font-label-sm">全部</span>
+<div class="absolute right-0 top-1/4 bottom-1/4 w-1 bg-primary rounded-l-full"></div>
+</button>
+<!-- Signature -->
+<button class="flex flex-col items-center justify-center py-4 w-full transition-colors group text-on-surface-variant hover:bg-surface-container-high">
+<span class="text-label-sm font-label-sm">招牌必点</span>
+</button>
+<!-- Live Seafood -->
+<button class="flex flex-col items-center justify-center py-4 w-full transition-colors group text-on-surface-variant hover:bg-surface-container-high px-2 text-center">
+<span class="text-label-sm font-label-sm leading-tight">环球活鲜</span>
+</button>
+<!-- Cold Dishes -->
+<button class="flex flex-col items-center justify-center py-4 w-full transition-colors group text-on-surface-variant hover:bg-surface-container-high">
+<span class="text-label-sm font-label-sm">凉爽冷拼</span>
+</button>
+<!-- Soups -->
+<button class="flex flex-col items-center justify-center py-4 w-full transition-colors group text-on-surface-variant hover:bg-surface-container-high">
+<span class="text-label-sm font-label-sm">滋补汤品</span>
+</button>
+<!-- Rice/Noodles -->
+<button class="flex flex-col items-center justify-center py-4 w-full transition-colors group text-on-surface-variant hover:bg-surface-container-high">
+<span class="text-label-sm font-label-sm">主食</span>
+</button>
+</nav>
+</aside>
+<!-- Right Content: Dish List -->
+<section class="flex-grow bg-surface-container-lowest h-full overflow-y-auto p-4 hide-scrollbar">
+<header class="mb-6">
+<h2 class="font-headline-md text-headline-md text-primary-container">全部菜品</h2>
+<p class="text-label-sm text-outline">共为您找到 42 款极鲜美味</p>
+</header>
+<div class="flex flex-col gap-6 pb-24">
+<!-- Product Card 1 -->
+<div class="flex gap-4 group">
+<div class="w-32 h-32 rounded-xl overflow-hidden flex-shrink-0 shadow-sm border border-outline-variant/20">
+<img alt="蒜蓉粉丝蒸生蚝" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close-up of freshly steamed oysters topped with golden fried garlic and translucent vermicelli, served on a white ceramic plate. The lighting is soft and natural, highlighting the succulent texture of the seafood and the glistening oil. Professional food photography style with a shallow depth of field, set against a clean, light blue-gray background reflecting the Ocean Fresh brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnLPCntwZIlhXU-qZbFi8wBqCCtjoy1plzK8EZly59qdilyzgEkq4RIVt4fwAycclzkEpvihhkX9GNB5i5MNlv2jqYpHaaatXkoT_C8VRsgZosxRt4HXPIp38CtWYoUrLE7SZPbb3xJ30bMXCurgY3dDxVBQrK74ZfyY7PNxkj1ZPwcni8p2Btp2zW637FOOdHNkrmGcT3STfUc3wjalGp9S0aK9NTevt0d_nBGX7qlTQyoBY1OIyTtW_3_8DPLMUKMPfyMBlynI_N"/>
+</div>
+<div class="flex flex-col justify-between flex-grow py-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-body-lg font-bold text-on-surface">蒜蓉粉丝蒸生蚝</h3>
+<span class="bg-surface-container-high text-primary text-[10px] px-2 py-0.5 rounded-full font-bold">今日捕捞</span>
+</div>
+<p class="text-on-surface-variant text-body-md line-clamp-2 mt-1">深海生蚝配合手工细粉丝，金蒜淋油，锁住原始鲜甜，每一口都是大海的味道。</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-price-display text-price-display text-secondary">¥88<span class="text-label-sm text-outline font-normal ml-1">/ 6只</span></span>
+<button aria-label="Add to cart" class="bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center active:scale-90 transition-transform shadow-md">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="flex gap-4 group">
+<div class="w-32 h-32 rounded-xl overflow-hidden flex-shrink-0 shadow-sm border border-outline-variant/20">
+<img alt="清蒸波士顿龙虾" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A whole steamed Boston lobster presented on a minimalist white porcelain dish, its shell a vibrant coral orange color. Garnished with delicate green scallion ribbons and thin slices of ginger. The scene is bright and airy, capturing the premium and professional aesthetic of high-end seafood dining. The background is a soft, ice-blue gradient that emphasizes the freshness and vital energy of the product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc9bCODHvldRjKEjK7p1Ns29BNxm1jE_E6qvhkiqboA2v23iFOhf4npNBk8nmcI9CC92rVFvWWSyv3wDba8MshhUctV3FIiWjLqLihkj5hmM_Me7KZwRP8CBAgCOWT8j4nvFFAmKi57pQIxKGETdgn4-xWg22tsKc4nCywWh8LoRNGW8kv9ZwwZtl2Ov4WDdQF6Xh245DpQkHWoZ_IhozxilMQDdjc_tM07VtJ0GVvHh95m66876GbJjnsO138mVibqbP4dcQfn63K"/>
+</div>
+<div class="flex flex-col justify-between flex-grow py-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-body-lg font-bold text-on-surface">清蒸波士顿龙虾</h3>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant text-[10px] px-2 py-0.5 rounded-full font-bold">招牌</span>
+</div>
+<p class="text-on-surface-variant text-body-md line-clamp-2 mt-1">精选约600g活波龙，原汁原味清蒸，肉质Q弹紧实，尽享极度奢华鲜感。</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-price-display text-price-display text-secondary">¥298<span class="text-label-sm text-outline font-normal ml-1">/ 例</span></span>
+<button aria-label="Add to cart" class="bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center active:scale-90 transition-transform shadow-md">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="flex gap-4 group">
+<div class="w-32 h-32 rounded-xl overflow-hidden flex-shrink-0 shadow-sm border border-outline-variant/20">
+<img alt="麻辣大闸蟹" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A plate of spicy stir-fried mud crabs with rich, glossy red sauce, red peppers, and aromatic spices. The lighting is warm and enticing, creating a vibrant and appetizing mood. The style is modern corporate lifestyle photography, featuring a clean white environment with deep sea blue accents. Every detail of the crab shell and sauce is sharp, evoking immediate freshness and culinary excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6T3Y6aLV56CstKpR7l_-sfV9hlk7BQtBIFd-QozCGoGrW1zEI5GOrK4ef3fw5w0My15FayX_pstNnSOctq_bGTGdT_YaCEmN8ffM6uui9SY9aOS1TZ0eaCWOCWbmQ0WVejX5pJGe4ItCYwLEi9Jokv5RYbBUVVmsUZ7BISMNb4k-OhEQFx34_2RRDJ8mMWhh_JQ131VpfjPto0bv5vjm_AG95DlKT3NvcMh_gBRNgemPGz7m53p5MUnKJF_ojsebQtEZn4Veyl1Jr"/>
+</div>
+<div class="flex flex-col justify-between flex-grow py-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-body-lg font-bold text-on-surface">香辣炒花蟹</h3>
+</div>
+<p class="text-on-surface-variant text-body-md line-clamp-2 mt-1">秘制香辣酱爆炒，蟹肉鲜甜与辣意交织，开胃十足，下酒良伴。</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-price-display text-price-display text-secondary">¥128<span class="text-label-sm text-outline font-normal ml-1">/ 份</span></span>
+<button aria-label="Add to cart" class="bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center active:scale-90 transition-transform shadow-md">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="flex gap-4 group">
+<div class="w-32 h-32 rounded-xl overflow-hidden flex-shrink-0 shadow-sm border border-outline-variant/20">
+<img alt="刺身拼盘" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Exquisite sashimi platter featuring thick cuts of salmon, tuna, and yellowtail arranged artfully on a bed of crushed ice and shiso leaves. The photography uses high-key lighting to emphasize the pristine, white environment. Deep sea blue tonal shifts in the background and soft coral orange garnishes provide a premium, vital contrast. The focus is sharp on the texture of the fish, suggesting ultimate freshness and luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuF2j7wG98XbRa6ojfhxQCaftopqd0FjwO3QqpM0AGBmckUN8zEk3Ibp8nglScEw9zsfQLpbgE4TBMO9GC-QO3JbY34sXKQrU8Y0FZAKTMyzsUr68uSzG_Yv12b3ESK9l_UFhaRMYHFcCGjNsh_vvRPr-ozPeY326tXAtb2-ltNHGcFeXKDKc4UV24SrXhlmiQVO2OZwuzkXJzX9K9QLdWXixnZtaDyMhFI0PZma_PYXDfuwUWm8LwQ4xsG3bL7E9T7yBnkwE_p75z"/>
+</div>
+<div class="flex flex-col justify-between flex-grow py-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-body-lg font-bold text-on-surface">极鲜刺身五拼</h3>
+<span class="bg-surface-container-high text-primary text-[10px] px-2 py-0.5 rounded-full font-bold">空运</span>
+</div>
+<p class="text-on-surface-variant text-body-md line-clamp-2 mt-1">三文鱼、北极贝、甜虾、金枪鱼、鲷鱼，每日空运直送，冰爽即化。</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-price-display text-price-display text-secondary">¥188<span class="text-label-sm text-outline font-normal ml-1">/ 例</span></span>
+<button aria-label="Add to cart" class="bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center active:scale-90 transition-transform shadow-md">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="flex gap-4 group">
+<div class="w-32 h-32 rounded-xl overflow-hidden flex-shrink-0 shadow-sm border border-outline-variant/20">
+<img alt="海鲜养生粥" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A steaming bowl of traditional seafood congee, filled with shrimp, scallops, and delicate pieces of white fish. Topped with chopped green onions and ginger. The bowl is handcrafted ceramic with a subtle blue glaze. The lighting is soft and cozy, emphasizing a wholesome and comforting mood. Professional lifestyle imagery set in a clean, modern environment that represents culinary excellence and health-conscious dining." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN8pdDRyBqjR5k-prVMeH4Ek--U_VYpFvRDG44alZMX3TtV9b5A-3ZgWL-GtgR0_fR_FI1kn6BSzeAzMXHMeQBzizAPKLg8hVMPCy2HeO_9MtWj93oSimiu5kD3E36tSOygHEDzTaax-76u8l3WIeMDlNJfEqHyWzRiSLZxU1fnjBgsfoKzaUIG5L8oWqHCS_jKX2ba1YErMdrmeEf12OsDO28f_PxPmSZT5-nY_43zMRR-9C_tOSN4PgiynRUwoX-B04QNDUa-W0Q"/>
+</div>
+<div class="flex flex-col justify-between flex-grow py-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-body-lg font-bold text-on-surface">潮汕砂锅海鲜粥</h3>
+</div>
+<p class="text-on-surface-variant text-body-md line-clamp-2 mt-1">基围虾与干贝文火慢熬，米香肉滑，鲜美养胃。每一勺都是精华。</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-price-display text-price-display text-secondary">¥68<span class="text-label-sm text-outline font-normal ml-1">/ 锅</span></span>
+<button aria-label="Add to cart" class="bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center active:scale-90 transition-transform shadow-md">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface border-t border-outline-variant shadow-[0_-4px_10px_rgba(0,51,102,0.05)] flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant transition-colors hover:text-primary" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">首页</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold active-dot transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">category</span>
+<span class="font-label-sm text-label-sm">分类</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant transition-colors hover:text-primary relative" href="#">
+<span class="material-symbols-outlined mb-1">shopping_cart</span>
+<span class="font-label-sm text-label-sm">购物车</span>
+<span class="absolute top-0 right-1 bg-secondary text-white text-[10px] px-1 rounded-full border-2 border-surface">2</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant transition-colors hover:text-primary" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-label-sm">我的</span>
+</a>
+</nav>
+<!-- Floating Order Summary (Contextual) -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-primary-container text-white p-4 rounded-2xl shadow-xl flex items-center justify-between z-40 transform translate-y-32 transition-transform duration-300" id="cart-summary">
+<div class="flex items-center gap-3">
+<div class="relative">
+<span class="material-symbols-outlined text-white">shopping_basket</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">2</span>
+</div>
+<div>
+<p class="font-bold">¥386.00</p>
+<p class="text-[10px] text-on-primary-container">已含配送费 ¥5.00</p>
+</div>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-full font-bold text-label-sm active:scale-95 transition-transform">
+            去结算
+        </button>
+</div>
+<script>
+        // Simple Micro-interaction: Show cart summary after a delay to simulate context
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('cart-summary').classList.remove('translate-y-32');
+            }, 1500);
+        });
+
+        // Category Switching (Visual Only)
+        const categoryButtons = document.querySelectorAll('aside nav button');
+        categoryButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryButtons.forEach(b => {
+                    b.classList.remove('text-primary', 'font-bold');
+                    b.classList.add('text-on-surface-variant');
+                    const dot = b.querySelector('.absolute');
+                    if(dot) dot.remove();
+                });
+                btn.classList.add('text-primary', 'font-bold');
+                btn.classList.remove('text-on-surface-variant');
+                const activeIndicator = document.createElement('div');
+                activeIndicator.className = 'absolute right-0 top-1/4 bottom-1/4 w-1 bg-primary rounded-l-full';
+                btn.appendChild(activeIndicator);
+            });
+        });
+    </script>
+</body></html>
