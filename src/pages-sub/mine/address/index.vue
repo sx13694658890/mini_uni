@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { IAddressItem } from '~/data/mine'
-import { ref } from 'vue'
+import { computed } from 'vue'
 import AppHeader from '~/components/ocean/app-header.vue'
-import { addresses as initialAddresses } from '~/data/mine'
+import { useAddressStore } from '~/store'
 
-const addressList = ref<IAddressItem[]>([...initialAddresses])
+const addressStore = useAddressStore()
+const addressList = computed(() => addressStore.items.value)
 
 definePage({
   style: {
@@ -13,8 +13,8 @@ definePage({
   },
 })
 
-function handleEdit() {
-  uni.showToast({ title: '编辑功能开发中', icon: 'none' })
+function handleEdit(id: string) {
+  openEditPage(id)
 }
 
 function handleDelete(id: string) {
@@ -23,13 +23,26 @@ function handleDelete(id: string) {
     content: '确定要删除这个地址吗？',
     success(res) {
       if (res.confirm)
-        addressList.value = addressList.value.filter(item => item.id !== id)
+        addressStore.removeAddress(id)
     },
   })
 }
 
 function handleAdd() {
-  uni.showToast({ title: '新增地址功能开发中', icon: 'none' })
+  openEditPage()
+}
+
+function openEditPage(id?: string) {
+  uni.navigateTo({
+    url: id
+      ? `/pages-sub/mine/address/edit?id=${id}`
+      : '/pages-sub/mine/address/edit',
+    events: {
+      refreshAddressList(data?: { message?: string }) {
+        uni.showToast({ title: data?.message ?? '保存成功', icon: 'success' })
+      },
+    },
+  })
 }
 </script>
 
@@ -65,7 +78,7 @@ function handleAdd() {
             </text>
           </view>
           <view class="mt-4 flex justify-end gap-6 border-t border-outline-variant pt-4">
-            <view class="flex items-center gap-1 text-xs text-on-surface-variant" @tap="handleEdit">
+            <view class="flex items-center gap-1 text-xs text-on-surface-variant" @tap="handleEdit(item.id)">
               <u-icon name="edit-pen" color="#43474f" size="16" />
               <text>编辑</text>
             </view>

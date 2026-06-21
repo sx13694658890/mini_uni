@@ -114,6 +114,22 @@
             "navigationStyle": "custom",
             "navigationBarTitleText": "联系客服"
           }
+        },
+        {
+          "path": "address/edit",
+          "type": "page",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "编辑收货地址"
+          }
+        },
+        {
+          "path": "member/index",
+          "type": "page",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "会员中心"
+          }
         }
       ]
     }

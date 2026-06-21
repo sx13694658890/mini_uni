@@ -24,6 +24,8 @@ export interface IAddressItem {
   id: string
   name: string
   phone: string
+  region?: string[]
+  detail?: string
   address: string
   isDefault?: boolean
 }

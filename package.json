@@ -70,6 +70,7 @@
     "@uni-helper/vite-plugin-uni-layouts": "^0.1.11",
     "@uni-helper/vite-plugin-uni-manifest": "^0.2.8",
     "@uni-helper/vite-plugin-uni-pages": "^0.3.19",
+    "@vant/area-data": "^2.1.0",
     "@vueuse/core": "^13.9.0",
     "@vueuse/shared": "^13.9.0",
     "consola": "^3.4.2",

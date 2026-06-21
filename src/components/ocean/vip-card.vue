@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const emit = defineEmits<{ tap: [] }>()
+
 const vipBenefits = [
   { icon: 'coupon', label: '全场9.5折' },
   { icon: 'bell', label: '优先配送' },
@@ -7,7 +9,7 @@ const vipBenefits = [
 </script>
 
 <template>
-  <view class="vip-card">
+  <view class="vip-card" @tap="emit('tap')">
     <view class="vip-header">
       <view class="vip-header-left">
         <view class="vip-title-row">

@@ -1,3 +1,4 @@
+export * from './useAddressStore'
 export * from './useCache'
 export * from './useCartStore'
 export * from './useConfirm'
