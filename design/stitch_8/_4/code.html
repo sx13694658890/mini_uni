@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c3c6d1",
+                        "primary-container": "#003366",
+                        "on-surface-variant": "#43474f",
+                        "on-surface": "#111c2d",
+                        "secondary-fixed": "#ffdbcf",
+                        "inverse-surface": "#263143",
+                        "primary": "#001e40",
+                        "tertiary-container": "#25353e",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#001b3c",
+                        "surface-tint": "#3a5f94",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#a7c8ff",
+                        "secondary": "#a43c12",
+                        "secondary-container": "#fe7e4f",
+                        "surface": "#f9f9ff",
+                        "surface-bright": "#f9f9ff",
+                        "on-secondary-fixed": "#380c00",
+                        "on-tertiary-container": "#8c9ea9",
+                        "on-secondary-fixed-variant": "#822800",
+                        "surface-variant": "#d8e3fb",
+                        "tertiary": "#0f2028",
+                        "surface-container-highest": "#d8e3fb",
+                        "on-primary-fixed-variant": "#1f477b",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#799dd6",
+                        "error": "#ba1a1a",
+                        "on-background": "#111c2d",
+                        "outline": "#737780",
+                        "on-tertiary-fixed": "#0c1e26",
+                        "background": "#f9f9ff",
+                        "surface-container-high": "#dee8ff",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#cfdaf2",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f0f3ff",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "on-secondary-container": "#6b1f00",
+                        "primary-fixed": "#d5e3ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#b7c9d5",
+                        "primary-fixed-dim": "#a7c8ff",
+                        "inverse-on-surface": "#ecf1ff",
+                        "tertiary-fixed": "#d3e5f1",
+                        "surface-container": "#e7eeff",
+                        "on-tertiary-fixed-variant": "#384953"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "32px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "stack-lg": "24px",
+                        "gutter": "12px",
+                        "container-margin": "16px"
+                    },
+                    "fontFamily": {
+                        "price-display": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "price-display": ["22px", {"lineHeight": "22px", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden pb-32">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-on-surface shadow-sm flex items-center justify-between px-container-margin h-16">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-low transition-colors active:scale-95 transition-transform text-primary dark:text-primary-fixed" onclick="history.back()">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed truncate">海味鲜 Ocean Fresh</h1>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-95 transition-transform text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-95 transition-transform text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</header>
+<main class="mt-16">
+<!-- Hero Section: Image Gallery -->
+<section class="relative w-full aspect-[4/3] md:aspect-[21/9] overflow-hidden">
+<img alt="Spicy Stir-fried Clams" class="w-full h-full object-cover" data-alt="A premium, gourmet close-up of a spicy stir-fried clam dish served in a heavy ceramic bowl. The clams are glossy and coated in a rich, vibrant coral orange chili oil sauce, accented with bright green scallions and sliced red chilies. The lighting is soft and cinematic, highlighting the fresh textures of the seafood and the steam rising from the dish. The background is a clean, minimal white stone countertop that reflects a professional light-mode aesthetic, emphasizing immediate freshness and culinary excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC92XKpN2mnJwwF9k-foQhBiMQBeZ5mzhDWYQ2U4mF5q60WmeRXizMkFPCeNullmna_djx-5uK4_WzHQ7h1l9wVt5-NWvokJCqLNTpa73N8i__2nSCRBpDddKJ5C5Bj06bM0qFjI5tTyLjooPVzZCedbpr8c6RpqyfsUuCtQKaBiSzz33-aTX-4UnocNh47PT0cdK1Gqlc9Na9UmIDY2WjkDaBeGu-2_ghKQ48H5sPJlYWqRMwcmNXBpxjwY8XJO8-SxLX1brOsgy0c"/>
+<div class="absolute bottom-4 right-4 flex gap-2">
+<div class="px-3 py-1 glass-effect rounded-full text-primary font-bold text-xs flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="photo_camera">photo_camera</span>
+                    1/5
+                </div>
+</div>
+<!-- Freshness Tag Overlay -->
+<div class="absolute top-4 left-4">
+<div class="bg-surface-container-lowest/90 px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+<span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+<span class="text-primary font-bold text-xs">今日捕捞 Caught Today</span>
+</div>
+</div>
+</section>
+<!-- Product Details Canvas -->
+<section class="relative -mt-8 px-container-margin">
+<div class="bg-surface-container-lowest rounded-t-[32px] p-6 shadow-[0_-10px_25px_rgba(0,51,102,0.08)]">
+<!-- Title & Rating Row -->
+<div class="flex justify-between items-start mb-4">
+<div class="flex-1">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-1">香辣炒花甲</h2>
+<p class="text-on-surface-variant font-body-md">Spicy Stir-fried Clams (Premium Selection)</p>
+</div>
+<div class="text-right">
+<div class="flex items-center justify-end text-secondary-container mb-1">
+<span class="material-symbols-outlined fill" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined fill" data-icon="star_half" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<p class="text-label-sm text-on-surface-variant">4.8 (2.4k+ 评价)</p>
+</div>
+</div>
+<!-- Price Row -->
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-secondary font-price-display text-price-display">¥68.00</span>
+<span class="text-on-surface-variant line-through text-label-sm">¥89.00</span>
+<span class="ml-auto bg-secondary-fixed text-on-secondary-fixed-variant px-2 py-0.5 rounded text-xs font-bold">限时优惠 Limited Time</span>
+</div>
+<!-- Description -->
+<div class="mb-8">
+<h3 class="text-primary font-bold mb-2">甄选描述 Description</h3>
+<p class="text-on-surface-variant leading-relaxed text-body-md">
+                        选用当日捕捞的高品质花甲，壳薄肉厚，鲜甜无沙。采用地道川式香辣工艺，猛火爆炒。秘制红油与新鲜青红椒的碰撞，锁住贝肉本身的鲜美，口感香辣爽脆。
+                    </p>
+</div>
+<!-- Customization: Spiciness -->
+<div class="mb-6">
+<h3 class="text-primary font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="local_fire_department">local_fire_department</span>
+                        选择辣度 Spiciness
+                    </h3>
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-2.5 rounded-xl border border-outline text-primary hover:border-secondary hover:bg-secondary-fixed transition-all" onclick="this.parentNode.querySelectorAll('button').forEach(b =&gt; b.className='px-6 py-2.5 rounded-xl border border-outline text-primary transition-all'); this.className='px-6 py-2.5 rounded-xl border-2 border-secondary bg-secondary-fixed text-on-secondary-fixed font-bold shadow-sm'">
+                            微辣 Mild
+                        </button>
+<button class="px-6 py-2.5 rounded-xl border-2 border-secondary bg-secondary-fixed text-on-secondary-fixed font-bold shadow-sm">
+                            中辣 Medium
+                        </button>
+<button class="px-6 py-2.5 rounded-xl border border-outline text-primary hover:border-secondary hover:bg-secondary-fixed transition-all" onclick="this.parentNode.querySelectorAll('button').forEach(b =&gt; b.className='px-6 py-2.5 rounded-xl border border-outline text-primary transition-all'); this.className='px-6 py-2.5 rounded-xl border-2 border-secondary bg-secondary-fixed text-on-secondary-fixed font-bold shadow-sm'">
+                            特辣 Extra
+                        </button>
+</div>
+</div>
+<!-- Customization: Portion Size -->
+<div class="mb-10">
+<h3 class="text-primary font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" data-icon="restaurant">restaurant</span>
+                        份量大小 Portion Size
+                    </h3>
+<div class="flex flex-wrap gap-3">
+<button class="flex-1 min-w-[140px] px-4 py-4 rounded-2xl border-2 border-secondary bg-secondary-fixed text-on-secondary-fixed font-bold flex flex-col items-center gap-1 shadow-sm">
+<span>标准份 Regular</span>
+<span class="text-[10px] opacity-70">约 500g</span>
+</button>
+<button class="flex-1 min-w-[140px] px-4 py-4 rounded-2xl border border-outline text-primary flex flex-col items-center gap-1 hover:border-secondary transition-all" onclick="this.parentNode.querySelectorAll('button').forEach(b =&gt; b.className='flex-1 min-w-[140px] px-4 py-4 rounded-2xl border border-outline text-primary flex flex-col items-center gap-1 transition-all'); this.className='flex-1 min-w-[140px] px-4 py-4 rounded-2xl border-2 border-secondary bg-secondary-fixed text-on-secondary-fixed font-bold flex flex-col items-center gap-1 shadow-sm'">
+<span>加量份 Large</span>
+<span class="text-[10px] opacity-70">约 800g (+¥25)</span>
+</button>
+</div>
+</div>
+<!-- Nutritional Info / Bento Mini-Grid -->
+<div class="grid grid-cols-3 gap-4 mb-10">
+<div class="bg-surface-container-low p-4 rounded-2xl text-center shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-xl mb-1" data-icon="timer">timer</span>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">烹饪时长</p>
+<p class="font-bold text-primary">15 min</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-2xl text-center shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-xl mb-1" data-icon="bolt">bolt</span>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">热量</p>
+<p class="font-bold text-primary">340 kcal</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-2xl text-center shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-xl mb-1" data-icon="eco">eco</span>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">食材来源</p>
+<p class="font-bold text-primary">有机自产</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<footer class="fixed bottom-0 w-full z-50 bg-surface-container-lowest border-t border-outline-variant px-container-margin py-4 flex items-center gap-4 h-24 shadow-[0_-8px_20px_rgba(0,51,102,0.05)]">
+<div class="flex flex-col">
+<span class="text-[10px] text-on-surface-variant uppercase font-bold">总计 Total</span>
+<span class="text-secondary font-price-display text-2xl">¥68.00</span>
+</div>
+<button class="flex-1 bg-primary-container text-on-primary-container h-14 rounded-2xl flex items-center justify-center gap-2 font-bold shadow-lg hover:shadow-xl transition-all active:scale-95" onclick="this.classList.add('bg-secondary')">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+            加入购物车 Add to Cart
+        </button>
+<button class="w-14 h-14 rounded-2xl border-2 border-primary flex items-center justify-center text-primary hover:bg-primary-fixed transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</footer>
+<!-- Atmosphere/Micro-interaction Script -->
+<script>
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                let ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                let x = e.clientX - e.target.offsetLeft;
+                let y = e.clientY - e.target.offsetTop;
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                setTimeout(() => { ripple.remove(); }, 600);
+            });
+        });
+    </script>
+<style>
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            background-color: rgba(255, 255, 255, 0.4);
+            pointer-events: none;
+        }
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</body></html>

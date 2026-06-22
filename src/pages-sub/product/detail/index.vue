@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import AppHeader from '~/components/ocean/app-header.vue'
 import { detailProduct } from '~/data/ocean'
 import { useCartStore } from '~/store'
+import ProductHero3d from '../components/product-hero-3d.vue'
 
 const { addItem } = useCartStore()
 
@@ -60,18 +61,8 @@ function addToCart() {
     <AppHeader show-back title="商品详情" />
 
     <scroll-view scroll-y class="box-border min-h-0 w-full flex-1" :show-scrollbar="false">
-      <!-- Hero Image -->
-      <view class="relative h-[280px] w-full">
-        <image class="h-full w-full" :src="detailProduct.image" mode="aspectFill" />
-        <view class="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-xs text-primary font-bold shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
-          <view class="h-2 w-2 rounded-full bg-secondary-container" />
-          <text>今日捕捞</text>
-        </view>
-        <view class="absolute bottom-8 right-4 flex items-center gap-1 rounded-full bg-white/80 px-3 py-1 text-xs text-primary font-bold">
-          <u-icon name="camera" color="#001e40" size="12" />
-          <text>1/5</text>
-        </view>
-      </view>
+      <!-- Hero Image 3D -->
+      <ProductHero3d :image="detailProduct.image" />
 
       <!-- Detail Card -->
       <view class="relative rounded-t-[32px] bg-surface-lowest p-6 shadow-[0_-10px_25px_rgba(0,51,102,0.08)] -mt-8">

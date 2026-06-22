@@ -72,6 +72,7 @@
     "@uni-helper/vite-plugin-uni-pages": "^0.3.19",
     "@vueuse/core": "^13.9.0",
     "@vueuse/shared": "^13.9.0",
+    "animejs": "^4.4.1",
     "consola": "^3.4.2",
     "postcss-px-to-viewport": "^1.1.1",
     "unocss": "65.5.0",

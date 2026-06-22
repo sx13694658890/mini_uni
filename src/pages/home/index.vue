@@ -10,6 +10,7 @@ import { useUserStore } from '~/store'
 import { navigateTo } from '~/utils'
 
 const activeFilter = ref('sales')
+const bannerCurrent = ref(0)
 const promoDismissed = useStorage('home-promo-dismissed', false)
 const showPromoModal = ref(!promoDismissed.value)
 
@@ -27,6 +28,18 @@ definePage({
 
 function goCategory() {
   uni.switchTab({ url: '/pages/category/index' })
+}
+
+function goCategoryList(id: string) {
+  navigateTo('/pages-sub/home-category/list/index', { id })
+}
+
+function goSeasonalList() {
+  navigateTo('/pages-sub/home-seasonal/list/index')
+}
+
+function onBannerChange(e: { detail: { current: number } }) {
+  bannerCurrent.value = e.detail.current
 }
 
 function goProductDetail(id: string) {
@@ -84,14 +97,26 @@ const bottomSpacerHeight = computed(() => {
           <text class="text-xl text-primary font-semibold">
             时令推荐
           </text>
-          <view class="flex items-center gap-0.5 text-xs text-secondary font-medium">
+          <view class="flex items-center gap-0.5 text-xs text-secondary font-medium" @tap="goSeasonalList">
             <text>查看全部</text>
             <u-icon name="arrow-right" color="#a43c12" size="12" />
           </view>
         </view>
-        <scroll-view scroll-x class="whitespace-nowrap" :show-scrollbar="false">
-          <view class="inline-flex gap-3">
-            <view v-for="banner in banners" :key="banner.id" class="relative h-32 w-[300px] shrink-0 overflow-hidden rounded-xl">
+        <swiper
+          class="h-32 w-full overflow-hidden rounded-xl"
+          :autoplay="banners.length > 1"
+          :circular="banners.length > 1"
+          :duration="500"
+          :interval="4000"
+          :indicator-dots="false"
+          @change="onBannerChange"
+        >
+          <swiper-item
+            v-for="banner in banners"
+            :key="banner.id"
+            @tap="goSeasonalList"
+          >
+            <view class="relative h-full w-full overflow-hidden rounded-xl">
               <image class="h-full w-full" :src="banner.image" mode="aspectFill" />
               <view class="absolute inset-0 flex flex-col justify-end from-black/60 to-transparent bg-gradient-to-t p-4">
                 <view class="mb-1 inline-block w-fit rounded px-2 py-0.5 text-[10px] text-white" :style="{ background: banner.tagBg }">
@@ -105,13 +130,21 @@ const bottomSpacerHeight = computed(() => {
                 </text>
               </view>
             </view>
-          </view>
-        </scroll-view>
+          </swiper-item>
+        </swiper>
+        <view v-if="banners.length > 1" class="mt-2 flex items-center justify-center gap-1.5">
+          <view
+            v-for="(banner, index) in banners"
+            :key="banner.id"
+            class="h-1.5 rounded-full transition-all duration-300"
+            :class="bannerCurrent === index ? 'w-4 bg-primary' : 'w-1.5 bg-outline-variant/50'"
+          />
+        </view>
       </view>
 
       <!-- Category Icons -->
       <view class="grid grid-cols-4 mb-8 gap-4 px-4">
-        <view v-for="cat in homeCategories" :key="cat.id" class="flex flex-col items-center gap-2" @tap="goCategory">
+        <view v-for="cat in homeCategories" :key="cat.id" class="flex flex-col items-center gap-2" @tap="goCategoryList(cat.id)">
           <view class="h-14 w-14 flex items-center justify-center rounded-2xl bg-surface-container shadow-[0_2px_4px_rgba(0,51,102,0.06)]">
             <u-icon :name="cat.icon" color="#001e40" size="28" />
           </view>
