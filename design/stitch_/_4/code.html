@@ -4,20 +4,28 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        .glass-effect {
+        body {
+            font-family: 'Plus Jakarta Sans', "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: #f9f9ff;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-card {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
     </style>
 <script id="tailwind-config">
@@ -26,53 +34,21 @@
             theme: {
                 extend: {
                     "colors": {
-                        "outline-variant": "#c3c6d1",
-                        "primary-container": "#003366",
-                        "on-surface-variant": "#43474f",
-                        "on-surface": "#111c2d",
-                        "secondary-fixed": "#ffdbcf",
-                        "inverse-surface": "#263143",
-                        "primary": "#001e40",
-                        "tertiary-container": "#25353e",
-                        "on-tertiary": "#ffffff",
-                        "on-primary-fixed": "#001b3c",
-                        "surface-tint": "#3a5f94",
-                        "on-error": "#ffffff",
-                        "inverse-primary": "#a7c8ff",
-                        "secondary": "#a43c12",
-                        "secondary-container": "#fe7e4f",
-                        "surface": "#f9f9ff",
-                        "surface-bright": "#f9f9ff",
-                        "on-secondary-fixed": "#380c00",
-                        "on-tertiary-container": "#8c9ea9",
-                        "on-secondary-fixed-variant": "#822800",
-                        "surface-variant": "#d8e3fb",
-                        "tertiary": "#0f2028",
-                        "surface-container-highest": "#d8e3fb",
-                        "on-primary-fixed-variant": "#1f477b",
-                        "on-primary": "#ffffff",
-                        "on-primary-container": "#799dd6",
-                        "error": "#ba1a1a",
-                        "on-background": "#111c2d",
-                        "outline": "#737780",
-                        "on-tertiary-fixed": "#0c1e26",
-                        "background": "#f9f9ff",
-                        "surface-container-high": "#dee8ff",
-                        "error-container": "#ffdad6",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-dim": "#cfdaf2",
-                        "on-secondary": "#ffffff",
-                        "surface-container-low": "#f0f3ff",
-                        "secondary-fixed-dim": "#ffb59c",
-                        "on-secondary-container": "#6b1f00",
-                        "primary-fixed": "#d5e3ff",
-                        "on-error-container": "#93000a",
-                        "tertiary-fixed-dim": "#b7c9d5",
-                        "primary-fixed-dim": "#a7c8ff",
-                        "inverse-on-surface": "#ecf1ff",
-                        "tertiary-fixed": "#d3e5f1",
                         "surface-container": "#e7eeff",
-                        "on-tertiary-fixed-variant": "#384953"
+                        "primary-fixed": "#d5e3ff",
+                        "on-primary-fixed": "#001b3c",
+                        "on-surface": "#111c2d",
+                        "inverse-on-surface": "#ecf1ff",
+                        "primary-container": "#003366",
+                        "on-tertiary-container": "#8c9ea9",
+                        "secondary-container": "#fe7e4f",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#a43c12",
+                        "primary": "#001e40",
+                        "on-surface-variant": "#43474f",
+                        "surface": "#f9f9ff",
+                        "outline-variant": "#c3c6d1",
+                        "outline": "#737780",
                     },
                     "borderRadius": {
                         "DEFAULT": "0.25rem",
@@ -81,27 +57,19 @@
                         "full": "9999px"
                     },
                     "spacing": {
-                        "section-gap": "32px",
-                        "stack-md": "16px",
+                        "container-margin": "16px",
                         "stack-sm": "8px",
-                        "stack-lg": "24px",
+                        "section-gap": "32px",
                         "gutter": "12px",
-                        "container-margin": "16px"
-                    },
-                    "fontFamily": {
-                        "price-display": ["Plus Jakarta Sans"],
-                        "headline-md": ["Plus Jakarta Sans"],
-                        "label-sm": ["Plus Jakarta Sans"],
-                        "body-md": ["Plus Jakarta Sans"],
-                        "body-lg": ["Plus Jakarta Sans"],
-                        "headline-lg": ["Plus Jakarta Sans"]
+                        "stack-md": "16px",
+                        "stack-lg": "24px"
                     },
                     "fontSize": {
                         "price-display": ["22px", {"lineHeight": "22px", "fontWeight": "700"}],
                         "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
-                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
-                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
                         "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
                         "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
                     }
                 },
@@ -114,172 +82,215 @@
     }
   </style>
   </head>
-<body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden pb-32">
-<!-- Top Navigation Bar -->
+<body class="bg-surface text-on-surface">
+<!-- Top Navigation Shell -->
 <header class="fixed top-0 w-full z-50 bg-surface dark:bg-on-surface shadow-sm flex items-center justify-between px-container-margin h-16">
-<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-low transition-colors active:scale-95 transition-transform text-primary dark:text-primary-fixed" onclick="history.back()">
-<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">menu</span>
 </button>
-<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed truncate">海味鲜 Ocean Fresh</h1>
-<div class="flex items-center gap-2">
-<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-95 transition-transform text-primary dark:text-primary-fixed">
-<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed">半成品</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform p-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">search</span>
 </button>
-<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-95 transition-transform text-primary dark:text-primary-fixed">
-<span class="material-symbols-outlined" data-icon="share">share</span>
+<button class="active:scale-95 transition-transform p-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">shopping_bag</span>
 </button>
 </div>
 </header>
-<main class="mt-16">
-<!-- Hero Section: Image Gallery -->
-<section class="relative w-full aspect-[4/3] md:aspect-[21/9] overflow-hidden">
-<img alt="Spicy Stir-fried Clams" class="w-full h-full object-cover" data-alt="A premium, gourmet close-up of a spicy stir-fried clam dish served in a heavy ceramic bowl. The clams are glossy and coated in a rich, vibrant coral orange chili oil sauce, accented with bright green scallions and sliced red chilies. The lighting is soft and cinematic, highlighting the fresh textures of the seafood and the steam rising from the dish. The background is a clean, minimal white stone countertop that reflects a professional light-mode aesthetic, emphasizing immediate freshness and culinary excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC92XKpN2mnJwwF9k-foQhBiMQBeZ5mzhDWYQ2U4mF5q60WmeRXizMkFPCeNullmna_djx-5uK4_WzHQ7h1l9wVt5-NWvokJCqLNTpa73N8i__2nSCRBpDddKJ5C5Bj06bM0qFjI5tTyLjooPVzZCedbpr8c6RpqyfsUuCtQKaBiSzz33-aTX-4UnocNh47PT0cdK1Gqlc9Na9UmIDY2WjkDaBeGu-2_ghKQ48H5sPJlYWqRMwcmNXBpxjwY8XJO8-SxLX1brOsgy0c"/>
-<div class="absolute bottom-4 right-4 flex gap-2">
-<div class="px-3 py-1 glass-effect rounded-full text-primary font-bold text-xs flex items-center gap-1 shadow-sm">
-<span class="material-symbols-outlined text-sm" data-icon="photo_camera">photo_camera</span>
-                    1/5
-                </div>
-</div>
-<!-- Freshness Tag Overlay -->
-<div class="absolute top-4 left-4">
-<div class="bg-surface-container-lowest/90 px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-<span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
-<span class="text-primary font-bold text-xs">今日捕捞 Caught Today</span>
-</div>
-</div>
-</section>
-<!-- Product Details Canvas -->
-<section class="relative -mt-8 px-container-margin">
-<div class="bg-surface-container-lowest rounded-t-[32px] p-6 shadow-[0_-10px_25px_rgba(0,51,102,0.08)]">
-<!-- Title & Rating Row -->
-<div class="flex justify-between items-start mb-4">
-<div class="flex-1">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-1">香辣炒花甲</h2>
-<p class="text-on-surface-variant font-body-md">Spicy Stir-fried Clams (Premium Selection)</p>
-</div>
-<div class="text-right">
-<div class="flex items-center justify-end text-secondary-container mb-1">
-<span class="material-symbols-outlined fill" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined fill" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined fill" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined fill" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined fill" data-icon="star_half" style="font-variation-settings: 'FILL' 1;">star_half</span>
-</div>
-<p class="text-label-sm text-on-surface-variant">4.8 (2.4k+ 评价)</p>
+<main class="pt-16 pb-24 flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-24 bg-surface-container-low fixed h-full left-0 border-r border-outline-variant overflow-y-auto hide-scrollbar hidden md:block">
+<nav class="flex flex-col py-4">
+<a class="flex flex-col items-center py-4 gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="text-label-sm font-label-sm">全部</span>
+</a>
+<a class="flex flex-col items-center py-4 gap-1 text-primary font-bold bg-surface border-r-4 border-primary" href="#">
+<span class="material-symbols-outlined">set_meal</span>
+<span class="text-label-sm font-label-sm">半成品</span>
+</a>
+<a class="flex flex-col items-center py-4 gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">kitchen</span>
+<span class="text-label-sm font-label-sm">冷冻熟食</span>
+</a>
+<a class="flex flex-col items-center py-4 gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">local_dining</span>
+<span class="text-label-sm font-label-sm">快手菜</span>
+</a>
+</nav>
+</aside>
+<!-- Content Area -->
+<section class="flex-1 md:ml-24 px-container-margin py-stack-lg">
+<!-- Hero Banner -->
+<div class="relative w-full h-48 rounded-xl overflow-hidden mb-section-gap shadow-lg">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A cinematic, high-fidelity close-up of a beautifully prepared seafood dish with steam rising from it. The lighting is soft and natural, emphasizing the vibrant colors of shrimp and fresh herbs. The background is a clean, modern kitchen with cool blue and white tones, reflecting a premium and professional culinary environment for Ocean Fresh seafood." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-PyxbUDyDanRPo393YyQ1KZNLcaBVFzML4T5e9gTER6slw1ayGwSTuFN50iyxIjxDLWIZ0QldYiFfJNHYflry66G-KK2AX9N1L8oF0Bhd8EoAHV6I8fFsSnqkhq50r1F9BnkE2wJVMYmBo3h2bxU7iE8sa9Iz8gqXu8LQCzcC0Hh7vI77UIjHtpDgOr4livt1qtKUmbWg3dVBrq8FYTsuPa84ZjUCdGekqjaOni-OZ9_ZuCvxxjO8cmDpUqD2AMaK_UR7SBIV48eh')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent flex flex-col justify-center px-8 text-white">
+<h2 class="font-headline-lg text-headline-lg mb-2">5分钟变大厨</h2>
+<p class="font-body-md text-body-md opacity-90 max-w-xs">精选深海活鲜，免洗免切，专业配方调味，宅家尽享餐厅级海味。</p>
 </div>
 </div>
-<!-- Price Row -->
-<div class="flex items-baseline gap-2 mb-6">
-<span class="text-secondary font-price-display text-price-display">¥68.00</span>
-<span class="text-on-surface-variant line-through text-label-sm">¥89.00</span>
-<span class="ml-auto bg-secondary-fixed text-on-secondary-fixed-variant px-2 py-0.5 rounded text-xs font-bold">限时优惠 Limited Time</span>
+<!-- Filter Chips -->
+<div class="flex gap-2 mb-stack-lg overflow-x-auto hide-scrollbar pb-2">
+<button class="px-4 py-2 rounded-full bg-primary text-white text-label-sm font-label-sm whitespace-nowrap">推荐</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm whitespace-nowrap hover:bg-outline-variant transition-colors">人气热销</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm whitespace-nowrap hover:bg-outline-variant transition-colors">当季新品</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm whitespace-nowrap hover:bg-outline-variant transition-colors">价格升序</button>
 </div>
-<!-- Description -->
-<div class="mb-8">
-<h3 class="text-primary font-bold mb-2">甄选描述 Description</h3>
-<p class="text-on-surface-variant leading-relaxed text-body-md">
-                        选用当日捕捞的高品质花甲，壳薄肉厚，鲜甜无沙。采用地道川式香辣工艺，猛火爆炒。秘制红油与新鲜青红椒的碰撞，锁住贝肉本身的鲜美，口感香辣爽脆。
-                    </p>
-</div>
-<!-- Customization: Spiciness -->
-<div class="mb-6">
-<h3 class="text-primary font-bold mb-3 flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary" data-icon="local_fire_department">local_fire_department</span>
-                        选择辣度 Spiciness
-                    </h3>
-<div class="flex flex-wrap gap-3">
-<button class="px-6 py-2.5 rounded-xl border border-outline text-primary hover:border-secondary hover:bg-secondary-fixed transition-all" onclick="this.parentNode.querySelectorAll('button').forEach(b =&gt; b.className='px-6 py-2.5 rounded-xl border border-outline text-primary transition-all'); this.className='px-6 py-2.5 rounded-xl border-2 border-secondary bg-secondary-fixed text-on-secondary-fixed font-bold shadow-sm'">
-                            微辣 Mild
-                        </button>
-<button class="px-6 py-2.5 rounded-xl border-2 border-secondary bg-secondary-fixed text-on-secondary-fixed font-bold shadow-sm">
-                            中辣 Medium
-                        </button>
-<button class="px-6 py-2.5 rounded-xl border border-outline text-primary hover:border-secondary hover:bg-secondary-fixed transition-all" onclick="this.parentNode.querySelectorAll('button').forEach(b =&gt; b.className='px-6 py-2.5 rounded-xl border border-outline text-primary transition-all'); this.className='px-6 py-2.5 rounded-xl border-2 border-secondary bg-secondary-fixed text-on-secondary-fixed font-bold shadow-sm'">
-                            特辣 Extra
-                        </button>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product 1 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_15px_rgba(0,51,102,0.06)] hover:shadow-[0_8px_25px_rgba(0,51,102,0.1)] transition-shadow group">
+<div class="relative aspect-square">
+<img class="w-full h-full object-cover" data-alt="Professional studio photograph of garlic vermicelli steamed scallops on a white porcelain plate. The scallops are plump and translucent, topped with golden fried garlic and green scallions. Soft daylight from the side creates elegant highlights on the shells. Modern corporate seafood style, clean white background, high-end culinary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxR9bpPfecHyAr7ihj08J4GanRWsdGfFNdba0GHyKvBd8stIYJQvLaZuiCzwtEzx04pW9xo_usLJLFp1fbLUg0Q83B4--b_XAvoByry3e4RHQn-Q01ur4sTmVCZJuY7EITydp4-UjDwytn_wL0XMUsbCzTP2KEV8Q6D59GEGvTyXYQ5-yQ3WouDVFAh92asbhK2le486lYBIBff7LpZZsssDzgFREvQ2ifVhUYWIsWmLUwjA2KzoITJzZSeD2OJ2f_9bAJXnK4DTVg"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-surface-container-low/90 backdrop-blur-md rounded-md text-primary text-[10px] font-bold">当日捕捞</span>
+<span class="px-2 py-1 bg-secondary-container/90 backdrop-blur-md rounded-md text-white text-[10px] font-bold">爆款</span>
 </div>
 </div>
-<!-- Customization: Portion Size -->
-<div class="mb-10">
-<h3 class="text-primary font-bold mb-3 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-container" data-icon="restaurant">restaurant</span>
-                        份量大小 Portion Size
-                    </h3>
-<div class="flex flex-wrap gap-3">
-<button class="flex-1 min-w-[140px] px-4 py-4 rounded-2xl border-2 border-secondary bg-secondary-fixed text-on-secondary-fixed font-bold flex flex-col items-center gap-1 shadow-sm">
-<span>标准份 Regular</span>
-<span class="text-[10px] opacity-70">约 500g</span>
-</button>
-<button class="flex-1 min-w-[140px] px-4 py-4 rounded-2xl border border-outline text-primary flex flex-col items-center gap-1 hover:border-secondary transition-all" onclick="this.parentNode.querySelectorAll('button').forEach(b =&gt; b.className='flex-1 min-w-[140px] px-4 py-4 rounded-2xl border border-outline text-primary flex flex-col items-center gap-1 transition-all'); this.className='flex-1 min-w-[140px] px-4 py-4 rounded-2xl border-2 border-secondary bg-secondary-fixed text-on-secondary-fixed font-bold flex flex-col items-center gap-1 shadow-sm'">
-<span>加量份 Large</span>
-<span class="text-[10px] opacity-70">约 800g (+¥25)</span>
+<div class="p-stack-md">
+<h3 class="font-headline-md text-headline-md text-primary mb-1 leading-tight">蒜蓉粉丝蒸扇贝(半成品)</h3>
+<p class="text-on-surface-variant text-label-sm font-label-sm mb-4">产地：威海海域 · 6只装</p>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-secondary font-price-display text-price-display">¥49.9</span>
+<span class="text-outline text-[10px] line-through">¥68.0</span>
+</div>
+<button class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center active:scale-90 transition-transform shadow-md shadow-secondary/20">
+<span class="material-symbols-outlined">add_shopping_cart</span>
 </button>
 </div>
 </div>
-<!-- Nutritional Info / Bento Mini-Grid -->
-<div class="grid grid-cols-3 gap-4 mb-10">
-<div class="bg-surface-container-low p-4 rounded-2xl text-center shadow-sm">
-<span class="material-symbols-outlined text-primary-container text-xl mb-1" data-icon="timer">timer</span>
-<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">烹饪时长</p>
-<p class="font-bold text-primary">15 min</p>
 </div>
-<div class="bg-surface-container-low p-4 rounded-2xl text-center shadow-sm">
-<span class="material-symbols-outlined text-primary-container text-xl mb-1" data-icon="bolt">bolt</span>
-<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">热量</p>
-<p class="font-bold text-primary">340 kcal</p>
+<!-- Product 2 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_15px_rgba(0,51,102,0.06)] hover:shadow-[0_8px_25px_rgba(0,51,102,0.1)] transition-shadow group">
+<div class="relative aspect-square">
+<img class="w-full h-full object-cover" data-alt="High-end food photography of Golden Soup Fish Fillets with Pickled Vegetables. The golden broth is rich and vibrant, with white, tender fish slices and bright yellow pickled greens. Garnished with red chilies and fresh cilantro. Luxurious, appetizing, and fresh style, captured in a clean lifestyle environment with professional studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbwpWNzOzKB6ctzcRM9rFEZ8L3shTtWB4ufc91gVyuRd5BhSsKilYWFvAlsY5lcRftIKVWjGuXZjud7W_PEQlFvwoeNPNbDu_YmjgbVOnP-8J_ShhHGQUCx8Mqt6t9nmaDWcQe6egX1wZDwkxhECBGXtZMh1hQF8BWyfNAfYXJIdgAyz-oUW67OMhX8PmpikJi7kfFsFFHjBzakQGElOmQ8jhU9ogIXhZSznHh9bXWCHvDQfXuazS2c4VzqPaju3P00zMPdtaRCu8O"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-surface-container-low/90 backdrop-blur-md rounded-md text-primary text-[10px] font-bold">秘制金汤</span>
 </div>
-<div class="bg-surface-container-low p-4 rounded-2xl text-center shadow-sm">
-<span class="material-symbols-outlined text-primary-container text-xl mb-1" data-icon="eco">eco</span>
-<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">食材来源</p>
-<p class="font-bold text-primary">有机自产</p>
+</div>
+<div class="p-stack-md">
+<h3 class="font-headline-md text-headline-md text-primary mb-1 leading-tight">金汤酸菜鱼片</h3>
+<p class="text-on-surface-variant text-label-sm font-label-sm mb-4">活鱼现片 · 免洗免切 · 450g</p>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-secondary font-price-display text-price-display">¥35.8</span>
+<span class="text-outline text-[10px] line-through">¥45.0</span>
+</div>
+<button class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center active:scale-90 transition-transform shadow-md shadow-secondary/20">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_15px_rgba(0,51,102,0.06)] hover:shadow-[0_8px_25px_rgba(0,51,102,0.1)] transition-shadow group">
+<div class="relative aspect-square">
+<img class="w-full h-full object-cover" data-alt="Minimalist top-down shot of high-quality shrimp dumplings on a wooden steamer. The dumpling skins are translucent, revealing whole pink shrimp inside. Pristine white marble background, lifestyle lighting, very clean and sophisticated aesthetic for a premium seafood brand Ocean Fresh." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVr5BeVS4IyuUownOWgTsBPXTninh9rn_tysQxB1pFwUkPMTZtpiZdRz-6g7hAoWG4U68Sab46bS7_5-UGVTPAgdwewXxTNE-C4179Hi7IFgwWVcLjN3iQw1Vslw-hJnaJSHwvEEJEOGPiO7A9bh0IGtrzkMjvVTUxH9vfoQmSGY052Zgc00nw1DvxalEJaHLd_fuPto97N_ASqP6e-g1Jfxd7BRpkgp_-787mh9TsSBIpQUnUlVw9IXK-EgcJhaOl8q6vm34vY-AX"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-surface-container-low/90 backdrop-blur-md rounded-md text-primary text-[10px] font-bold">整颗大虾仁</span>
+</div>
+</div>
+<div class="p-stack-md">
+<h3 class="font-headline-md text-headline-md text-primary mb-1 leading-tight">虾仁水饺</h3>
+<p class="text-on-surface-variant text-label-sm font-label-sm mb-4">手工包制 · 皮薄馅大 · 500g</p>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-secondary font-price-display text-price-display">¥58.0</span>
+<span class="text-outline text-[10px] line-through">¥72.0</span>
+</div>
+<button class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center active:scale-90 transition-transform shadow-md shadow-secondary/20">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 4 (Asymmetric Layout element) -->
+<div class="bg-primary-container text-white rounded-xl p-stack-lg flex flex-col justify-between min-h-[300px] md:col-span-1 lg:col-span-2">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary-container">verified</span>
+<span class="text-label-sm font-label-sm tracking-wider uppercase">Freshness Guarantee</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-4">极速冷链 · 鲜活到家</h2>
+<p class="text-on-primary-container text-body-lg font-body-lg max-w-md">我们承诺所有半成品食材均由原产地直发，全程-18℃温控运输，保证到手依然处于最佳鲜度。</p>
+</div>
+<div class="flex items-center gap-8 mt-8">
+<div class="flex flex-col">
+<span class="text-headline-lg font-headline-lg">100%</span>
+<span class="text-label-sm opacity-60">活鲜入库</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-lg font-headline-lg">24h</span>
+<span class="text-label-sm opacity-60">极速配送</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-lg font-headline-lg">0</span>
+<span class="text-label-sm opacity-60">添加剂</span>
+</div>
 </div>
 </div>
 </div>
 </section>
 </main>
-<!-- Bottom Action Bar -->
-<footer class="fixed bottom-0 w-full z-50 bg-surface-container-lowest border-t border-outline-variant px-container-margin py-4 flex items-center gap-4 h-24 shadow-[0_-8px_20px_rgba(0,51,102,0.05)]">
-<div class="flex flex-col">
-<span class="text-[10px] text-on-surface-variant uppercase font-bold">总计 Total</span>
-<span class="text-secondary font-price-display text-2xl">¥68.00</span>
-</div>
-<button class="flex-1 bg-primary-container text-on-primary-container h-14 rounded-2xl flex items-center justify-center gap-2 font-bold shadow-lg hover:shadow-xl transition-all active:scale-95" onclick="this.classList.add('bg-secondary')">
-<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
-            加入购物车 Add to Cart
-        </button>
-<button class="w-14 h-14 rounded-2xl border-2 border-primary flex items-center justify-center text-primary hover:bg-primary-fixed transition-colors active:scale-95">
-<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-on-surface border-t border-outline-variant shadow-[0_-4px_10px_rgba(0,51,102,0.05)] flex justify-around items-center h-20 pb-safe px-4 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">首页</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">category</span>
+<span class="text-label-sm font-label-sm">分类</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-label-sm font-label-sm">购物车</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-sm font-label-sm">我的</span>
+</a>
+</nav>
+<!-- Floating Action Button for Support -->
+<div class="fixed right-6 bottom-24 z-40">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-xl flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined">headset_mic</span>
 </button>
-</footer>
-<!-- Atmosphere/Micro-interaction Script -->
+</div>
 <script>
+        // Micro-interactions
         document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                let ripple = document.createElement('span');
-                ripple.classList.add('ripple');
-                this.appendChild(ripple);
-                let x = e.clientX - e.target.offsetLeft;
-                let y = e.clientY - e.target.offsetTop;
-                ripple.style.left = `${x}px`;
-                ripple.style.top = `${y}px`;
-                setTimeout(() => { ripple.remove(); }, 600);
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('scale-95');
             });
         });
-    </script>
-<style>
-        .ripple {
-            position: absolute;
-            border-radius: 50%;
-            transform: scale(0);
-            animation: ripple-animation 0.6s linear;
-            background-color: rgba(255, 255, 255, 0.4);
-            pointer-events: none;
-        }
-        @keyframes ripple-animation {
-            to {
-                transform: scale(4);
-                opacity: 0;
+
+        // Simple scroll behavior for header
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll <= 0) {
+                header.classList.remove('shadow-md');
+                return;
             }
-        }
-    </style>
+            if (currentScroll > lastScroll) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+                header.classList.add('shadow-md');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
 </body></html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#f9f9ff",
+                    "secondary": "#a43c12",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "on-secondary-container": "#6b1f00",
+                    "on-primary-container": "#799dd6",
+                    "tertiary": "#0f2028",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#001b3c",
+                    "on-tertiary-fixed": "#0c1e26",
+                    "on-background": "#111c2d",
+                    "secondary-container": "#fe7e4f",
+                    "on-tertiary-fixed-variant": "#384953",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#d8e3fb",
+                    "inverse-primary": "#a7c8ff",
+                    "surface-container": "#e7eeff",
+                    "surface-variant": "#d8e3fb",
+                    "surface-tint": "#3a5f94",
+                    "tertiary-fixed": "#d3e5f1",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#d5e3ff",
+                    "on-surface-variant": "#43474f",
+                    "tertiary-fixed-dim": "#b7c9d5",
+                    "on-surface": "#111c2d",
+                    "primary-container": "#003366",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#822800",
+                    "outline-variant": "#c3c6d1",
+                    "surface-container-low": "#f0f3ff",
+                    "inverse-on-surface": "#ecf1ff",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "surface": "#f9f9ff",
+                    "on-secondary-fixed": "#380c00",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#ffb59c",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#cfdaf2",
+                    "inverse-surface": "#263143",
+                    "tertiary-container": "#25353e",
+                    "outline": "#737780",
+                    "primary": "#001e40",
+                    "on-tertiary-container": "#8c9ea9",
+                    "surface-container-high": "#dee8ff",
+                    "secondary-fixed": "#ffdbcf",
+                    "background": "#f9f9ff",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "32px",
+                    "gutter": "12px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "stack-lg": "24px",
+                    "container-margin": "16px"
+            },
+            "fontFamily": {
+                    "price-display": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "price-display": ["22px", {"lineHeight": "22px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-header {
+            backdrop-filter: blur(12px);
+            background: rgba(249, 249, 255, 0.85);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass-header shadow-sm h-16 flex items-center justify-between px-container-margin">
+<button class="flex items-center justify-center w-10 h-10 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">时令推荐</h1>
+<button class="flex items-center justify-center w-10 h-10 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</header>
+<!-- Search & Filter Area (Sticky) -->
+<div class="pt-16 sticky top-0 z-40 bg-background">
+<!-- Search Bar -->
+<div class="px-container-margin py-stack-sm">
+<div class="relative flex items-center bg-surface-container-low rounded-xl px-4 h-11 border border-outline-variant/30 focus-within:border-primary-container transition-all">
+<span class="material-symbols-outlined text-outline text-xl" data-icon="search">search</span>
+<input class="ml-2 bg-transparent border-none focus:ring-0 w-full text-body-md text-on-surface placeholder:text-outline/60" placeholder="搜索当季鲜活好味..." type="text"/>
+</div>
+</div>
+<!-- Categories Tab (Scrollable) -->
+<div class="flex overflow-x-auto hide-scrollbar px-container-margin gap-stack-lg py-2">
+<button class="flex-shrink-0 font-label-sm text-label-sm px-4 py-2 rounded-full bg-primary-container text-white">全部</button>
+<button class="flex-shrink-0 font-label-sm text-label-sm px-4 py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high">时令鲜鱼</button>
+<button class="flex-shrink-0 font-label-sm text-label-sm px-4 py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high">贝类活鲜</button>
+<button class="flex-shrink-0 font-label-sm text-label-sm px-4 py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high">虾蟹礼遇</button>
+<button class="flex-shrink-0 font-label-sm text-label-sm px-4 py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high">超值套装</button>
+</div>
+<!-- Sorting -->
+<div class="flex items-center justify-between px-container-margin py-3 border-b border-outline-variant/20 bg-surface-bright">
+<div class="flex gap-stack-lg">
+<button class="font-label-sm text-label-sm text-primary font-bold flex items-center gap-1">
+                    综合 <span class="material-symbols-outlined text-xs" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+<button class="font-label-sm text-label-sm text-on-surface-variant">销量</button>
+<button class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-0.5">
+                    价格 <span class="material-symbols-outlined text-xs" data-icon="unfold_more">unfold_more</span>
+</button>
+</div>
+<button class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+                筛选 <span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Product Grid -->
+<main class="px-container-margin pt-stack-md grid grid-cols-2 gap-gutter">
+<!-- Product 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_15px_rgba(0,51,102,0.04)] group transition-transform active:scale-[0.98]">
+<div class="relative aspect-square">
+<img class="w-full h-full object-cover" data-alt="A professional studio photography shot of a fresh Atlantic Salmon fillet on a bed of ice with lemon slices and rosemary, soft oceanic lighting, clean white background, high-end commercial food style, emphasizing freshness and vibrant orange color." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLmTBsIUNdX_hD1nQYDLgKsoD4-JqXz7NrUGHpeNe7A1w3bHNZP24ZLwrlMFZkQOVGLFzXLqfNGyClSLXUaj9CFwrL2MaOwz4M8mkgr1mSzj95tcm3Esa9V9jOiwvTYqyyD563UxP_3r-bvJQ6qYLPyEZPIS3l7KpFRUPpVIsNHxjTjuAHtS9p7S31oi_1D1_ue7Qif41hbKl-vmWmB2huB-pUMwLZbXcvtNypuu4oqHqJl9ZUZWbomXvQSGkxWU2q04JQFwmw0XtX"/>
+<div class="absolute top-2 left-2 flex flex-col gap-1">
+<span class="bg-secondary text-white text-[10px] px-2 py-0.5 rounded-full font-bold">限时抢购</span>
+<span class="bg-primary-container/80 backdrop-blur-sm text-white text-[10px] px-2 py-0.5 rounded-full">今日抵港</span>
+</div>
+</div>
+<div class="p-3">
+<h3 class="font-headline-md text-[15px] text-on-surface truncate">大西洋冰鲜三文鱼</h3>
+<p class="text-[11px] text-on-surface-variant mt-0.5">产地: 挪威峡湾</p>
+<div class="mt-3 flex items-center justify-between">
+<div class="flex items-baseline">
+<span class="text-secondary text-xs font-bold">¥</span>
+<span class="font-price-display text-price-display text-secondary ml-0.5">128</span>
+<span class="text-outline text-[10px] ml-1">/kg</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_15px_rgba(0,51,102,0.04)] active:scale-[0.98]">
+<div class="relative aspect-square">
+<img class="w-full h-full object-cover" data-alt="Close up shot of live premium King Prawns in a minimalist white ceramic bowl, sparkling water droplets on their shells, bright natural sunlight, ultra-high resolution, vibrant blue and silver tones, clean and professional seafood marketing aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpoaWmNNHpSbqYnGiQfmgxopV62IhLrRdpj40KYkXhcqq6k33un4YcpCOtdGXWgPr0L0xIhv3RluqtXHCrQycy7FsXZgci3jpokzKmN7sucTL6G1xMPRh8qNO_yVYIKup2aTedtxRsedQsTbvh51wg31JO3T4bWflkNYWBNzPZ8kh3uTxWpYrDksLfGN7fj5AleQJ_LCPn0JZAOrBWjfSA5OEZRqGHfBalaItfCzneS6XNMNddin2VWOKFSlGElXcSV1qbYsG44_C2"/>
+<div class="absolute top-2 left-2">
+<span class="bg-secondary text-white text-[10px] px-2 py-0.5 rounded-full font-bold">时令必点</span>
+</div>
+</div>
+<div class="p-3">
+<h3 class="font-headline-md text-[15px] text-on-surface truncate">深海大明虾 (L级)</h3>
+<p class="text-[11px] text-on-surface-variant mt-0.5">产地: 阿根廷深海</p>
+<div class="mt-3 flex items-center justify-between">
+<div class="flex items-baseline">
+<span class="text-secondary text-xs font-bold">¥</span>
+<span class="font-price-display text-price-display text-secondary ml-0.5">89</span>
+<span class="text-outline text-[10px] ml-1">/盒</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_15px_rgba(0,51,102,0.04)] active:scale-[0.98]">
+<div class="relative aspect-square">
+<img class="w-full h-full object-cover" data-alt="Plump fresh scallops in half shells presented elegantly on a minimalist dark slate platter with sea salt and microgreens. The scene is lit with cool-toned studio lighting, highlighting the pearlescent texture of the scallops. High-end culinary photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXUL6IFJ832YZtUsUFd7pr_Zn3n7kdawxpJOwvJJIGa5Y5dqU1sRLKiphte-9eefWuiL653OKP1yw7c6ebCIrmI08ZRlxYdbY0aPRQ8nSg-RpAm2YckByb-kXt7_lhh5v6Hzcf0z55-G0e5CSbFO1QhUDj4e3o_aOyXtAb8efqlkBpV26p65GuD4N33rYDamgkfZEoCFgtD5SySqp8CkgeglfOvpmf6WVINuzq1bEKtOx-O680yyCRN7HfW4a1qop17Qw35mH5cLaI"/>
+<div class="absolute top-2 left-2">
+<span class="bg-primary-container/80 backdrop-blur-sm text-white text-[10px] px-2 py-0.5 rounded-full">极速达</span>
+</div>
+</div>
+<div class="p-3">
+<h3 class="font-headline-md text-[15px] text-on-surface truncate">北海道扇贝王</h3>
+<p class="text-[11px] text-on-surface-variant mt-0.5">产地: 日本北海道</p>
+<div class="mt-3 flex items-center justify-between">
+<div class="flex items-baseline">
+<span class="text-secondary text-xs font-bold">¥</span>
+<span class="font-price-display text-price-display text-secondary ml-0.5">156</span>
+<span class="text-outline text-[10px] ml-1">/6只</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_15px_rgba(0,51,102,0.04)] active:scale-[0.98]">
+<div class="relative aspect-square">
+<img class="w-full h-full object-cover" data-alt="A whole fresh Turbot fish elegantly arranged on a bed of crushed ice and seaweed. The lighting is crisp and clear, showing the unique texture of the skin. Clean minimalist kitchen setting, premium seafood retail atmosphere, natural cool colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnZbsBPH_Tlx3ftA0hJRFlmPzgwgPfiKFJx-Qh2peA73ZeY-_W8sUEMlFVpU_1MiuzArIxPzJpwoWMHwaNCyedj7T2zxsPqAQRKpaC3jVPxsm6Cz537cJahg6-CbkelhpLLYS1TNBJxjV5YU0h95rBmzB_VkkDfP2LPh8PS_tYOexvD2L2bxgcrUi6bjR5oxgM8EBq7I0DDIIDtMDk-VrjK4PAj_xYArk6jr4GEdaWvQUSdZ8Nj8G-3txxlCTi6eakvhuzU95oNhrz"/>
+<div class="absolute top-2 left-2">
+<span class="bg-secondary text-white text-[10px] px-2 py-0.5 rounded-full font-bold">主厨推荐</span>
+</div>
+</div>
+<div class="p-3">
+<h3 class="font-headline-md text-[15px] text-on-surface truncate">鲜活多宝鱼</h3>
+<p class="text-[11px] text-on-surface-variant mt-0.5">产地: 胶东半岛</p>
+<div class="mt-3 flex items-center justify-between">
+<div class="flex items-baseline">
+<span class="text-secondary text-xs font-bold">¥</span>
+<span class="font-price-display text-price-display text-secondary ml-0.5">65</span>
+<span class="text-outline text-[10px] ml-1">/条</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 5 (Asymmetric/Featured Row) -->
+<div class="col-span-2 bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_15px_rgba(0,51,102,0.04)] flex h-32 active:scale-[0.99] transition-transform">
+<div class="w-1/3 h-full">
+<img class="w-full h-full object-cover" data-alt="Luxury seafood assorted gift box featuring abalone, sea cucumber, and dried scallops. The packaging is premium deep navy with gold accents, set in a lifestyle dining room environment with warm evening lighting. High-end gifting aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1fvoCkeNsA0Xt0RnqoeYv1ndhxUKhejjsF6uC_7im_IHEATtrAvA1rR6fMNa6ZRJgt5oGtIlefhvTVd89l3Bx0IvY4RaUUkFLlw-ZsPkFvX4YniYiOTDIkcueQrVX-yIGx1YWJ6lSSXhNOpIJSqqwvUAsCk9WZ2_svZOc2sXMLg7EEK64B2qwZc1XTEB9dSqcX2FQy-WCJwv16LGHH_KK8jwqUN2KbwW-WjBY-cy4uPlmquTcl0jZZqZXkh1lKpNHFpRMPQkKsdTN"/>
+</div>
+<div class="flex-1 p-3 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-[15px] text-on-surface">时令滋补海鲜礼盒</h3>
+<span class="bg-secondary/10 text-secondary text-[10px] px-2 py-0.5 rounded border border-secondary/20">尊享装</span>
+</div>
+<p class="text-[11px] text-on-surface-variant mt-1 italic">“汇聚四海菁华，礼赠臻选之作”</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-baseline">
+<span class="text-secondary text-xs font-bold">¥</span>
+<span class="font-price-display text-price-display text-secondary ml-0.5">888</span>
+</div>
+<button class="px-4 py-1.5 rounded-full bg-primary-container text-white text-xs font-bold">立即抢购</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface shadow-[0_-4px_10px_rgba(0,51,102,0.05)] border-t border-outline-variant flex justify-around items-center h-20 pb-safe px-4">
+<!-- Home (Inactive) -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">首页</span>
+</div>
+<!-- Category (Active - based on current view intent) -->
+<div class="flex flex-col items-center justify-center text-primary font-bold active:scale-90 transition-transform relative">
+<span class="material-symbols-outlined" data-icon="category" style="font-variation-settings: 'FILL' 1;">category</span>
+<span class="font-label-sm text-label-sm">分类</span>
+<div class="absolute -bottom-1 w-1 h-1 bg-primary rounded-full"></div>
+</div>
+<!-- Cart (Inactive) -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform relative">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-sm text-label-sm">购物车</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full border-2 border-surface">3</span>
+</div>
+<!-- Profile (Inactive) -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">我的</span>
+</div>
+</nav>
+<script>
+        // Simple micro-interaction for active category state
+        const categories = document.querySelectorAll('.flex-shrink-0');
+        categories.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categories.forEach(b => {
+                    b.classList.remove('bg-primary-container', 'text-white');
+                    b.classList.add('text-on-surface-variant', 'hover:bg-surface-container-high');
+                });
+                btn.classList.add('bg-primary-container', 'text-white');
+                btn.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-high');
+            });
+        });
+
+        // Add to cart animation feedback
+        const cartButtons = document.querySelectorAll('button:has(.material-symbols-outlined)');
+        cartButtons.forEach(btn => {
+            if(btn.innerHTML.includes('add_shopping_cart')) {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const icon = btn.querySelector('.material-symbols-outlined');
+                    icon.textContent = 'check';
+                    btn.classList.replace('bg-primary-container', 'bg-emerald-500');
+                    setTimeout(() => {
+                        icon.textContent = 'add_shopping_cart';
+                        btn.classList.replace('bg-emerald-500', 'bg-primary-container');
+                    }, 1000);
+                });
+            }
+        });
+    </script>
+</body></html>

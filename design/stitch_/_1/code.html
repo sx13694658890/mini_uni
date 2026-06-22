@@ -2,328 +2,316 @@
 
 <html class="light" lang="zh-CN"><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>海味鲜 Ocean Fresh - 鲜活鱼类</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#e7eeff",
+                    "primary-fixed": "#d5e3ff",
+                    "on-surface": "#111c2d",
+                    "inverse-on-surface": "#ecf1ff",
+                    "primary-container": "#003366",
+                    "on-tertiary-fixed": "#0c1e26",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#263143",
+                    "on-tertiary-container": "#8c9ea9",
+                    "secondary-fixed-dim": "#ffb59c",
+                    "secondary-container": "#fe7e4f",
+                    "on-tertiary-fixed-variant": "#384953",
+                    "tertiary-fixed-dim": "#b7c9d5",
+                    "tertiary-container": "#25353e",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#380c00",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "surface-container-low": "#f0f3ff",
+                    "secondary": "#a43c12",
+                    "on-secondary-fixed-variant": "#822800",
+                    "inverse-primary": "#a7c8ff",
+                    "outline-variant": "#c3c6d1",
+                    "outline": "#737780",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#3a5f94",
+                    "surface": "#f9f9ff",
+                    "secondary-fixed": "#ffdbcf",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#001e40",
+                    "on-secondary-container": "#6b1f00",
+                    "surface-container-highest": "#d8e3fb",
+                    "on-surface-variant": "#43474f",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#d3e5f1",
+                    "on-primary-container": "#799dd6",
+                    "on-background": "#111c2d",
+                    "tertiary": "#0f2028",
+                    "surface-variant": "#d8e3fb",
+                    "surface-bright": "#f9f9ff",
+                    "background": "#f9f9ff",
+                    "surface-dim": "#cfdaf2",
+                    "surface-container-high": "#dee8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-margin": "16px",
+                    "stack-sm": "8px",
+                    "section-gap": "32px",
+                    "gutter": "12px",
+                    "stack-md": "16px",
+                    "stack-lg": "24px"
+            },
+            "fontFamily": {
+                    "price-display": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "price-display": ["22px", {"lineHeight": "22px", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
 <style>
+        body {
+            background-color: #f9f9ff;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d8e3fb;
+            border-radius: 10px;
+        }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .coral-gradient {
-            background: linear-gradient(135deg, #fe7e4f 0%, #a43c12 100%);
-        }
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(8px);
-        }
     </style>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "outline-variant": "#c3c6d1",
-                      "primary-container": "#003366",
-                      "on-surface-variant": "#43474f",
-                      "on-surface": "#111c2d",
-                      "secondary-fixed": "#ffdbcf",
-                      "inverse-surface": "#263143",
-                      "primary": "#001e40",
-                      "tertiary-container": "#25353e",
-                      "on-tertiary": "#ffffff",
-                      "on-primary-fixed": "#001b3c",
-                      "surface-tint": "#3a5f94",
-                      "on-error": "#ffffff",
-                      "inverse-primary": "#a7c8ff",
-                      "secondary": "#a43c12",
-                      "secondary-container": "#fe7e4f",
-                      "surface": "#f9f9ff",
-                      "surface-bright": "#f9f9ff",
-                      "on-secondary-fixed": "#380c00",
-                      "on-tertiary-container": "#8c9ea9",
-                      "on-secondary-fixed-variant": "#822800",
-                      "surface-variant": "#d8e3fb",
-                      "tertiary": "#0f2028",
-                      "surface-container-highest": "#d8e3fb",
-                      "on-primary-fixed-variant": "#1f477b",
-                      "on-primary": "#ffffff",
-                      "on-primary-container": "#799dd6",
-                      "error": "#ba1a1a",
-                      "on-background": "#111c2d",
-                      "outline": "#737780",
-                      "on-tertiary-fixed": "#0c1e26",
-                      "background": "#f9f9ff",
-                      "surface-container-high": "#dee8ff",
-                      "error-container": "#ffdad6",
-                      "surface-container-lowest": "#ffffff",
-                      "surface-dim": "#cfdaf2",
-                      "on-secondary": "#ffffff",
-                      "surface-container-low": "#f0f3ff",
-                      "secondary-fixed-dim": "#ffb59c",
-                      "on-secondary-container": "#6b1f00",
-                      "primary-fixed": "#d5e3ff",
-                      "on-error-container": "#93000a",
-                      "tertiary-fixed-dim": "#b7c9d5",
-                      "primary-fixed-dim": "#a7c8ff",
-                      "inverse-on-surface": "#ecf1ff",
-                      "tertiary-fixed": "#d3e5f1",
-                      "surface-container": "#e7eeff",
-                      "on-tertiary-fixed-variant": "#384953"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "section-gap": "32px",
-                      "stack-md": "16px",
-                      "stack-sm": "8px",
-                      "stack-lg": "24px",
-                      "gutter": "12px",
-                      "container-margin": "16px"
-              },
-              "fontFamily": {
-                      "price-display": ["Plus Jakarta Sans"],
-                      "headline-md": ["Plus Jakarta Sans"],
-                      "label-sm": ["Plus Jakarta Sans"],
-                      "body-md": ["Plus Jakarta Sans"],
-                      "body-lg": ["Plus Jakarta Sans"],
-                      "headline-lg": ["Plus Jakarta Sans"]
-              },
-              "fontSize": {
-                      "price-display": ["22px", {"lineHeight": "22px", "fontWeight": "700"}],
-                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
-                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
-                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                      "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
-              }
-            },
-          },
-        }
-      </script>
 <style>
     body {
       min-height: max(884px, 100dvh);
     }
   </style>
   </head>
-<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-secondary-container">
-<!-- Top Navigation Bar -->
-<header class="fixed top-0 w-full z-50 bg-surface dark:bg-on-surface shadow-sm h-16 flex items-center justify-between px-container-margin">
-<div class="flex items-center gap-2">
-<button class="material-symbols-outlined text-primary hover:bg-surface-container-low transition-colors p-2 rounded-full active:scale-95">menu</button>
-<h1 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed">海味鲜 Ocean Fresh</h1>
+<body class="font-body-md text-on-surface">
+<!-- Top AppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface shadow-sm flex items-center justify-between px-container-margin h-16">
+<div class="flex items-center gap-stack-sm">
+<button class="active:scale-95 transition-transform p-2">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">鲜活鱼类</h1>
 </div>
-<div class="flex items-center gap-4">
-<button class="material-symbols-outlined text-primary hover:bg-surface-container-low transition-colors p-2 rounded-full active:scale-95">shopping_bag</button>
+<div class="flex items-center gap-2">
+<button class="active:scale-95 transition-transform p-2 hover:bg-surface-container-low transition-colors rounded-full">
+<span class="material-symbols-outlined text-primary">search</span>
+</button>
+<button class="active:scale-95 transition-transform p-2 hover:bg-surface-container-low transition-colors rounded-full">
+<span class="material-symbols-outlined text-primary">shopping_bag</span>
+</button>
 </div>
 </header>
-<main class="pt-20 pb-24 px-container-margin max-w-2xl mx-auto">
-<!-- Search Bar -->
-<section class="mb-stack-lg">
-<div class="relative group">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input class="w-full h-12 pl-12 pr-4 rounded-xl border border-outline-variant bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none text-body-md" placeholder="搜索全球直达新鲜海产..." type="text"/>
-</div>
-</section>
-<!-- Seasonal Banner (Horizontal Scroll) -->
-<section class="mb-section-gap">
-<div class="flex items-center justify-between mb-stack-sm">
-<h2 class="font-headline-md text-headline-md text-primary">时令推荐</h2>
-<button class="text-secondary font-label-sm flex items-center gap-1">查看全部 <span class="material-symbols-outlined text-sm">arrow_forward_ios</span></button>
-</div>
-<div class="flex gap-gutter overflow-x-auto hide-scrollbar snap-x snap-mandatory">
-<!-- Banner Item 1 -->
-<div class="min-w-[85%] snap-center relative aspect-[21/9] rounded-xl overflow-hidden group">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious close-up of a cooked Red King Crab platter served on crushed ice with lemon wedges and rosemary garnish. The lighting is dramatic and premium, highlighting the vibrant coral red shell and succulent white meat. The background is a sophisticated deep sea blue with elegant restaurant lighting, creating an expensive and fresh atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr4MLb-B8l7ZxrCAC4ww8MOLvDH6DdzQbEgjKxeK79nZdGmCIpCm1nNJ57nBP7UjHPKOgqO6HvifzDA478C64iE4W5RHlev3jzQNwruNu65U-5uIVywQh4hS8XzWkWWsOHvyxvVuYLuzW9dMvuGy02cLsj6I6uzv5oFRa0ybSKGBx3dghqWCT9poa5EpzAHrKcoIVdHWCaf1QgRCZJmxuyJJNTjPLtM3FXajW2_sLE8njZ5sugjz0oWajiQxuc9WtXaxmb8SwCYQKE"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-4">
-<span class="inline-block px-2 py-1 bg-secondary text-white text-[10px] rounded mb-2 w-fit">限定活动</span>
-<h3 class="text-white font-headline-md">帝王蟹盛宴 · 产地直达</h3>
-<p class="text-white/80 text-xs">来自白令海峡的极致鲜美</p>
-</div>
-</div>
-<!-- Banner Item 2 -->
-<div class="min-w-[85%] snap-center relative aspect-[21/9] rounded-xl overflow-hidden group">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Glistening fresh bluefin tuna sashimi slices arranged artistically on a dark slate plate with wasabi and pickled ginger. The fish has a deep ruby red color and marbled texture. Soft cinematic lighting emphasizes the freshness and high-end culinary quality. The overall aesthetic is minimal and modern corporate lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADEbHyB-yVbkg4Di1qnPtgtlChCSbG4Oqc9cLg2kXH3p_QCBSE422b8IaigGOLZpEOyd2xZpeRl67X4ajuqvHzTVZhuwVR6Svn4Yr-8gskX-B4AJ9IdMSyHbxtpMGqwiuJwmOUYGrXvSc97W6YCsKnt2Rjk7_8mbbdFNCMOAbGkGEpUZCUjoLXvWMmFbDAlvTQZJHdPScy-Rx2p_DgmxrXYix6UaLCHWQYt6prk3QHf4b30JnoCwgdzXCI5ODYrtlKVnP5H5jFimk9"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-4">
-<span class="inline-block px-2 py-1 bg-primary-container text-white text-[10px] rounded mb-2 w-fit">今日捕捞</span>
-<h3 class="text-white font-headline-md">蓝鳍金枪鱼 · 旬之味</h3>
-<p class="text-white/80 text-xs">脂肪丰盈 鲜甜回甘</p>
+<main class="pt-16 pb-20 flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-24 bg-surface-container-lowest border-r border-outline-variant fixed h-full pt-4 overflow-y-auto custom-scrollbar md:w-32">
+<nav class="flex flex-col gap-2">
+<a class="flex flex-col items-center py-4 px-2 gap-1 border-l-4 border-primary bg-surface-container text-primary font-bold transition-all" href="#">
+<span class="text-label-sm font-label-sm text-center">鲜活鱼类</span>
+</a>
+<a class="flex flex-col items-center py-4 px-2 gap-1 border-l-4 border-transparent text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="text-label-sm font-label-sm text-center">精品虾类</span>
+</a>
+<a class="flex flex-col items-center py-4 px-2 gap-1 border-l-4 border-transparent text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="text-label-sm font-label-sm text-center">螃蟹贝类</span>
+</a>
+<a class="flex flex-col items-center py-4 px-2 gap-1 border-l-4 border-transparent text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="text-label-sm font-label-sm text-center">半成品</span>
+</a>
+<a class="flex flex-col items-center py-4 px-2 gap-1 border-l-4 border-transparent text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="text-label-sm font-label-sm text-center">进口冻品</span>
+</a>
+</nav>
+</aside>
+<!-- Product Content Area -->
+<section class="ml-24 md:ml-32 flex-1 p-4 bg-background">
+<!-- Hero Banner for Category -->
+<div class="relative w-full h-32 rounded-xl overflow-hidden mb-6 shadow-sm">
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, high-end food photography shot of a fresh Atlantic Salmon resting on a bed of crushed crystal-clear ice. Subtle mist and water droplets highlight the glistening scales. The background is a clean, minimalist deep-sea blue gradient, reflecting a premium and vital brand identity. Soft studio lighting creates elegant highlights, emphasizing immediate freshness and culinary excellence." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAomvC1l683tmA4KQ_NH0_0zoth__ihmHg8vI5gQzt5esERUuoEeajZ1YYANZTpH8f8YhFOiFmWdXlFI-0viX3KDBUvL9WYEQXE5YInnpXEVwxq3JUZBNV-COkIjj4f6JoPImuXI6tbCxdKXE2JMGTU66eYJTV2Jy4UfnOpIjtForsgnGPG7s31hOuAc15QTnd3OKNYv_UOdbS8cU39gaxeS-dgw0GSynXz1O6TAnE3bV5encGpayHdBi3DQ6crFnYaj8Ag4MYKFpQS')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent flex flex-col justify-center px-4">
+<span class="text-white font-bold text-headline-md">深海直达</span>
+<span class="text-primary-fixed text-label-sm">每日凌晨到货 · 活鲜直供</span>
 </div>
 </div>
+<!-- Filter Chips -->
+<div class="flex gap-2 mb-6 overflow-x-auto pb-2 no-scrollbar">
+<span class="px-4 py-1.5 rounded-full bg-primary-container text-on-primary-fixed text-label-sm font-bold shrink-0">综合</span>
+<span class="px-4 py-1.5 rounded-full bg-white text-on-surface-variant border border-outline-variant text-label-sm shrink-0">销量优先</span>
+<span class="px-4 py-1.5 rounded-full bg-white text-on-surface-variant border border-outline-variant text-label-sm shrink-0 flex items-center gap-1">价格 <span class="material-symbols-outlined text-[14px]">unfold_more</span></span>
+<span class="px-4 py-1.5 rounded-full bg-white text-on-surface-variant border border-outline-variant text-label-sm shrink-0">新品</span>
 </div>
-</section>
-<!-- Categories -->
-<section class="mb-section-gap grid grid-cols-4 gap-4">
-<div class="flex flex-col items-center gap-2 group active:scale-95 transition-transform">
-<div class="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-colors shadow-sm">
-<span class="material-symbols-outlined text-3xl">set_meal</span>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Product 1 -->
+<div class="bg-white rounded-xl shadow-[0_4px_15px_rgba(0,51,102,0.04)] overflow-hidden group hover:shadow-[0_8px_25px_rgba(0,51,102,0.08)] transition-all">
+<div class="relative aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional studio product shot of a thick, vibrant orange Norwegian Salmon fillet on a white marble slab. Glistening with freshness, accompanied by a sprig of dill and a slice of lemon. High-key lighting, clean white background, vibrant and appetizing colors, premium seafood aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf18uQSF1unLINO3i1XNFWxsViyRYeOULHrM0dUPSo4aba8-KRJudrKk2LAbqruCx4Xi-aQT0YPGCQEd7jiI0oDDc-c05iPtqnDNNBGvRjbzmTv1xyLqVjAYyOpGV4VF17RpwaJelUZpYMpbf59nFAPj_CD-7-UE4YXDfTisolQtunCJO1IxEO4z0lQ7o84M2SuIyVYXkTZSSehOe9XD0lfnh689Wdw1rgAB0OjWmTOIHrfIT-nPMLwio5Uev5YbPtgJeqHAIGE4jc"/>
+<div class="absolute top-2 left-2 bg-secondary-container text-white text-[10px] px-2 py-0.5 rounded-full font-bold">限时抢购</div>
 </div>
-<span class="font-label-sm">活鲜鱼类</span>
-</div>
-<div class="flex flex-col items-center gap-2 group active:scale-95 transition-transform">
-<div class="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-colors shadow-sm">
-<span class="material-symbols-outlined text-3xl">phishing</span>
-</div>
-<span class="font-label-sm">精品虾类</span>
-</div>
-<div class="flex flex-col items-center gap-2 group active:scale-95 transition-transform">
-<div class="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-colors shadow-sm">
-<span class="material-symbols-outlined text-3xl">restaurant</span>
-</div>
-<span class="font-label-sm">螃蟹贝类</span>
-</div>
-<div class="flex flex-col items-center gap-2 group active:scale-95 transition-transform">
-<div class="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-colors shadow-sm">
-<span class="material-symbols-outlined text-3xl">kitchen</span>
-</div>
-<span class="font-label-sm">半成品</span>
-</div>
-</section>
-<!-- Popular This Week -->
-<section>
-<div class="flex items-center justify-between mb-stack-md">
-<h2 class="font-headline-md text-headline-md text-primary">本周热销</h2>
-<div class="flex gap-2">
-<span class="px-3 py-1 bg-surface-container rounded-full text-xs text-on-surface-variant">销量排行</span>
-<span class="px-3 py-1 bg-surface-container rounded-full text-xs text-on-surface-variant">综合好评</span>
-</div>
-</div>
-<div class="grid grid-cols-1 gap-gutter">
-<!-- Product Card 1 -->
-<div class="flex bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-<div class="w-32 h-32 flex-shrink-0">
-<img class="w-full h-full object-cover" data-alt="High-resolution studio shot of premium tiger prawns on a white marble surface. The prawns are large, fresh, and slightly moist, with vibrant black and orange stripes. Natural window lighting creates soft shadows and highlights their glossy texture. A sprig of fresh dill and a slice of lemon are placed nearby, suggesting high-end gourmet quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwMLnfJkMCnpzGPcjhlyQPwin-QzB47weyVzXfTke7RaiWSo-AS8rxdgqnMGcOjeCsn2-tVwZB4eUFijbp7NcExUFkxm0j9mBfw0ltbZjELL78QqjN1BgIYUmxHayM9c5Lz-J4oZ7j9Ss04PUwRMQWI0PdCyvxUdPP-Qlj8tPkroDnSb-p1ckIEqka2_w_FPiGrVheq_RH6LFCNxruammxyYdR9Rgl_WCxklLcSS_YPjwPFTfQCi2WtfoY0bWsCE-6qUJH0DzT4AjZ"/>
-</div>
-<div class="p-3 flex flex-col justify-between flex-grow">
-<div>
-<div class="flex justify-between items-start">
-<h4 class="font-body-lg font-bold text-on-surface leading-tight">黑虎虾 (大号)</h4>
-<span class="bg-surface-container-low text-primary text-[10px] px-2 py-0.5 rounded-full border border-outline-variant">活鲜</span>
-</div>
-<p class="text-outline text-xs mt-1">产地：东南亚 · 约500g</p>
-</div>
-<div class="flex items-end justify-between">
+<div class="p-3">
+<h3 class="font-bold text-on-surface text-body-lg mb-1 truncate">挪威三文鱼 (中段)</h3>
+<p class="text-on-surface-variant text-label-sm mb-3">产地：挪威 · 约300g/份</p>
+<div class="flex items-center justify-between">
 <div class="flex flex-col">
-<span class="text-secondary font-price-display text-price-display">¥89.00</span>
-<span class="text-[10px] text-outline line-through">¥108.00</span>
+<span class="text-secondary font-price-display text-price-display">¥89.9</span>
+<span class="text-on-surface-variant text-label-sm line-through">¥108.0</span>
 </div>
-<button class="bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center active:scale-90 transition-transform shadow-lg shadow-secondary/20">
-<span class="material-symbols-outlined text-sm">add</span>
+<button class="bg-primary-container text-white w-9 h-9 rounded-full flex items-center justify-center active:scale-90 transition-transform shadow-md">
+<span class="material-symbols-outlined">add_shopping_cart</span>
 </button>
 </div>
 </div>
 </div>
-<!-- Product Card 2 -->
-<div class="flex bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-<div class="w-32 h-32 flex-shrink-0">
-<img class="w-full h-full object-cover" data-alt="Artisanal presentation of Japanese scallops in their shells, resting on a bed of rock salt and garnished with edible gold flakes and microgreens. The lighting is moody and sophisticated, emphasizing the pearlescent texture of the scallop meat. The color palette features deep blues and clean whites with warm coral accents, fitting the professional and premium seafood brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoKftTtG2gdJoD4UzJX16ttdDG97EH-guvgz3vafGtPc-vS9aYmIaMevLI4HEZc7sUmmIsGJ2amiMr-icQfFebvVejtoW-_ov76oYb_v1HtF2lJz-O21eBM5GrMFANVFbUFo8OOmgme3qXPJR9oellCXXStkAObHVZ0m8PqofsI-9raEub4DSU5sxSexiHs0-olxlXLMzKlPwgjNLTOxFobLnvw9Rqpp2lPEgXFL8a4PBPUAiibUJXbgSrxZMhiYeh62Rba2pDmFZS"/>
+<!-- Product 2 -->
+<div class="bg-white rounded-xl shadow-[0_4px_15px_rgba(0,51,102,0.04)] overflow-hidden group hover:shadow-[0_8px_25px_rgba(0,51,102,0.08)] transition-all">
+<div class="relative aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A whole East China Sea Yellow Croaker presented on a bed of ice with decorative seaweed. The fish has vibrant golden scales and bright eyes, indicating extreme freshness. Professional food photography, neutral light-gray background, elegant shadows, sharp focus on the texture of the scales." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_HKyFo76yYN4eGsRJLt8mJTuvFgxbO0DZtVtTg3K0NzQNHySe3IuYkOCo5mdcT2C2Xvdx8VmqaqtcQL5pe9UP9tvISVPBqWTMbuyWoa6PRcqxy-ET4qzprBQWej7_nTje0_KElxXJVPP0_qqhVQ1aMr3RbGbyj4GBaMceyShZWwcyt31U1HTG4BQEa_enhQfP59oiMJ7hq82Xmcdr19wA5LpiZYwAzkyNI8uJnl3R9rLCBL7M___o_jwBTLImv94mpqDresG-DQ0S"/>
+<div class="absolute top-2 left-2 bg-primary text-white text-[10px] px-2 py-0.5 rounded-full font-bold">产地直供</div>
 </div>
-<div class="p-3 flex flex-col justify-between flex-grow">
-<div>
-<div class="flex justify-between items-start">
-<h4 class="font-body-lg font-bold text-on-surface leading-tight">北海道帆立贝</h4>
-<span class="bg-surface-container-low text-primary text-[10px] px-2 py-0.5 rounded-full border border-outline-variant">进口</span>
-</div>
-<p class="text-outline text-xs mt-1">产地：日本 · 6-8只</p>
-</div>
-<div class="flex items-end justify-between">
+<div class="p-3">
+<h3 class="font-bold text-on-surface text-body-lg mb-1 truncate">东海大黄鱼 (活鲜)</h3>
+<p class="text-on-surface-variant text-label-sm mb-3">产地：福建 · 500g-600g/条</p>
+<div class="flex items-center justify-between">
 <div class="flex flex-col">
-<span class="text-secondary font-price-display text-price-display">¥158.00</span>
-<span class="text-[10px] text-outline line-through">¥198.00</span>
+<span class="text-secondary font-price-display text-price-display">¥58.0</span>
+<span class="text-on-surface-variant text-label-sm line-through">¥65.0</span>
 </div>
-<button class="bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center active:scale-90 transition-transform shadow-lg shadow-secondary/20">
-<span class="material-symbols-outlined text-sm">add</span>
+<button class="bg-primary-container text-white w-9 h-9 rounded-full flex items-center justify-center active:scale-90 transition-transform shadow-md">
+<span class="material-symbols-outlined">add_shopping_cart</span>
 </button>
 </div>
 </div>
 </div>
-<!-- Product Card 3 -->
-<div class="flex bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-<div class="w-32 h-32 flex-shrink-0">
-<img class="w-full h-full object-cover" data-alt="A whole fresh Atlantic Salmon fillet resting on a wooden board. The meat is bright orange with clean white fat lines, signifying high quality. Ice crystals are visible around it, and the background is a clean, modern kitchen environment with soft morning light. The styling is natural and vital, conveying the immediate freshness of the product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3WRub62pTEkWDB7cW5kkbmL205Rgq81YNViaOi5EmeGnR2K4nRo-AXqKc4l5BEHhnwH16gC943SSpKgyqu4OHTp33x61y00XK92hzumzs_7nhQE4ifM1p1XM4sbs6Bp8Argm4XS6YstdRHNQBR8qDd9FDk2YL8yutVFUhFh3rxpMNM_oGFbwdJT_cUGPQVPiGnpAn9S0-o-AymhIEPKoz9Ou81SDth5mnNldUJ8kKLc5-TvPYRWsJxQ_3s-riH9DM3j-SZOB_CNbV"/>
+<!-- Product 3 -->
+<div class="bg-white rounded-xl shadow-[0_4px_15px_rgba(0,51,102,0.04)] overflow-hidden group hover:shadow-[0_8px_25px_rgba(0,51,102,0.08)] transition-all">
+<div class="relative aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A top-down view of a fresh, whole Turbot fish on a professional kitchen preparation table. The fish skin is moist and dark, resting on scattered sea salt and aromatic herbs. Moody yet clean lighting, emphasizing the premium quality for steaming. Modern corporate seafood aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADEiD_thA1rSkfj2vK4OLc2s_ViOr4zOBiUMcnmextWRkLG79BzhXS09LLn4_9RYrU2AgOD7L7clCD13gHYEccMM2anhDK_Xd5mvQ-qYfdeTfn84puYxwIWX1hCuMKuwlVLxumfRLGtu79MjS6EpVZDrBP1o1-ez44dGFgvML3E6_yqo2MxvvNWYhgLqHuLrHs3GVaZskrV3cJn3_hLbUnKs3HfLfNEPjo65lEan43G3cEOs_VkIixHlmC0DbBt_PeyCfmCP-hVKRg"/>
+<div class="absolute top-2 left-2 bg-surface-container-highest text-primary text-[10px] px-2 py-0.5 rounded-full font-bold">当季热销</div>
 </div>
-<div class="p-3 flex flex-col justify-between flex-grow">
-<div>
-<div class="flex justify-between items-start">
-<h4 class="font-body-lg font-bold text-on-surface leading-tight">大西洋三文鱼中段</h4>
-<span class="bg-surface-container-low text-primary text-[10px] px-2 py-0.5 rounded-full border border-outline-variant">刺身级</span>
-</div>
-<p class="text-outline text-xs mt-1">产地：挪威 · 300g</p>
-</div>
-<div class="flex items-end justify-between">
+<div class="p-3">
+<h3 class="font-bold text-on-surface text-body-lg mb-1 truncate">清蒸多宝鱼 (活鲜)</h3>
+<p class="text-on-surface-variant text-label-sm mb-3">产地：大连 · 600g-700g/条</p>
+<div class="flex items-center justify-between">
 <div class="flex flex-col">
-<span class="text-secondary font-price-display text-price-display">¥128.00</span>
-<span class="text-[10px] text-outline line-through">¥145.00</span>
+<span class="text-secondary font-price-display text-price-display">¥45.0</span>
+<span class="text-on-surface-variant text-label-sm line-through">¥52.0</span>
 </div>
-<button class="bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center active:scale-90 transition-transform shadow-lg shadow-secondary/20">
-<span class="material-symbols-outlined text-sm">add</span>
+<button class="bg-primary-container text-white w-9 h-9 rounded-full flex items-center justify-center active:scale-90 transition-transform shadow-md">
+<span class="material-symbols-outlined">add_shopping_cart</span>
 </button>
 </div>
 </div>
+</div>
+<!-- Product 4 -->
+<div class="bg-white rounded-xl shadow-[0_4px_15px_rgba(0,51,102,0.04)] overflow-hidden group hover:shadow-[0_8px_25px_rgba(0,51,102,0.08)] transition-all">
+<div class="relative aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Fresh sea bass fillets displayed on a minimalist wooden platter with sea salt and black peppercorns. Soft, natural morning light coming from a side window, highlighting the pearly white flesh. High-end lifestyle photography for a gourmet grocery brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXNslkVWiZ6zhUhsu_x-AjFyRqshkTRyQ46ge2rW70P2yM9jVoiwZMJqa4xmn1bqPTKARLn4hYKskWksl_zNs5VKyaot9s1NEel4H_hmo9eWRuvx1ft8SBoX3zq9t414AWQNK111_5wGQcTHxFyT53x5LtjPD7eom26bNfO-TOc6sq0DRcEXkk38qHPXoX5C45nDIRfBRgbfeysX5MEFrmiC8kFqOljvAfUKiMWErSIPYy86p8j__2tnbV3-649zXkTgjALa4aYV6c"/>
+</div>
+<div class="p-3">
+<h3 class="font-bold text-on-surface text-body-lg mb-1 truncate">生态海鲈鱼 (净膛)</h3>
+<p class="text-on-surface-variant text-label-sm mb-3">产地：珠海 · 450g/份</p>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-secondary font-price-display text-price-display">¥29.9</span>
+<span class="text-on-surface-variant text-label-sm line-through">¥36.0</span>
+</div>
+<button class="bg-primary-container text-white w-9 h-9 rounded-full flex items-center justify-center active:scale-90 transition-transform shadow-md">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More Indicator -->
+<div class="flex justify-center py-12">
+<div class="flex items-center gap-2 text-on-surface-variant text-label-sm">
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant animate-pulse"></div>
+<span>正在探索更多鲜活...</span>
 </div>
 </div>
 </section>
 </main>
 <!-- Bottom Navigation Bar -->
-<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-on-surface border-t border-outline-variant shadow-[0_-4px_10px_rgba(0,51,102,0.05)] flex justify-around items-center h-20 pb-safe px-4">
-<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold active:scale-90 transition-transform" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
-<span class="font-label-sm text-label-sm">首页</span>
-<div class="w-1 h-1 rounded-full bg-primary mt-0.5"></div>
+<nav class="fixed bottom-0 w-full z-50 bg-surface rounded-t-xl shadow-[0_-4px_10px_rgba(0,51,102,0.05)] border-t border-outline-variant h-20 pb-safe px-4 flex justify-around items-center">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm mt-1">首页</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
-<span class="material-symbols-outlined">category</span>
-<span class="font-label-sm text-label-sm">分类</span>
+<a class="flex flex-col items-center justify-center text-primary font-bold active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">category</span>
+<span class="font-label-sm text-label-sm mt-1">分类</span>
+<div class="w-1 h-1 bg-primary rounded-full mt-0.5"></div>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform relative" href="#">
 <span class="material-symbols-outlined">shopping_cart</span>
-<span class="font-label-sm text-label-sm">购物车</span>
+<span class="font-label-sm text-label-sm mt-1">购物车</span>
+<span class="absolute -top-1 right-1 bg-secondary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">3</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
 <span class="material-symbols-outlined">person</span>
-<span class="font-label-sm text-label-sm">我的</span>
+<span class="font-label-sm text-label-sm mt-1">我的</span>
 </a>
 </nav>
 <script>
-        // Micro-interactions for product cards
-        document.querySelectorAll('.active\\:scale-90').forEach(button => {
-            button.addEventListener('mousedown', () => {
-                button.style.transform = 'scale(0.9)';
-            });
-            button.addEventListener('mouseup', () => {
-                button.style.transform = 'scale(1)';
-            });
-            button.addEventListener('mouseleave', () => {
-                button.style.transform = 'scale(1)';
+        // Micro-interactions for category selection
+        document.querySelectorAll('aside nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('aside nav a').forEach(l => {
+                    l.classList.remove('border-primary', 'bg-surface-container', 'text-primary', 'font-bold');
+                    l.classList.add('border-transparent', 'text-on-surface-variant');
+                });
+                link.classList.add('border-primary', 'bg-surface-container', 'text-primary', 'font-bold');
+                link.classList.remove('border-transparent', 'text-on-surface-variant');
             });
         });
 
-        // Sticky Header scroll effect
-        let lastScroll = 0;
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > lastScroll && currentScroll > 80) {
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                header.style.transform = 'translateY(0)';
+        // Add to cart feedback
+        document.querySelectorAll('button').forEach(btn => {
+            if(btn.querySelector('.material-symbols-outlined')?.textContent === 'add_shopping_cart') {
+                btn.addEventListener('click', () => {
+                    const originalIcon = btn.innerHTML;
+                    btn.innerHTML = '<span class="material-symbols-outlined">done</span>';
+                    btn.classList.replace('bg-primary-container', 'bg-secondary-container');
+                    setTimeout(() => {
+                        btn.innerHTML = originalIcon;
+                        btn.classList.replace('bg-secondary-container', 'bg-primary-container');
+                    }, 1000);
+                });
             }
-            header.style.transition = 'transform 0.3s ease-in-out';
-            lastScroll = currentScroll;
         });
     </script>
 </body></html>

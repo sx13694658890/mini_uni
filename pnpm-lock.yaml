@@ -89,6 +89,9 @@ importers:
       '@vueuse/shared':
         specifier: ^13.9.0
         version: 13.9.0(vue@3.5.22(typescript@5.9.3))
+      animejs:
+        specifier: ^4.4.1
+        version: 4.4.1
       consola:
         specifier: ^3.4.2
         version: 3.4.2
@@ -2261,6 +2264,9 @@ packages:
 
   alien-signals@3.0.0:
     resolution: {integrity: sha512-JHoRJf18Y6HN4/KZALr3iU+0vW9LKG+8FMThQlbn4+gv8utsLIkwpomjElGPccGeNwh0FI2HN6BLnyFLo6OyLQ==}
+
+  animejs@4.4.1:
+    resolution: {integrity: sha512-XimhJw4vPb6tAd6Zaoa6BaspJ8UteQMKvL7Pvrt6MW/6u2UvJs0TB/LLqR1sigaiYvpVPC3Tokr9emcCMhWFhw==}
 
   ansi-escapes@4.3.2:
     resolution: {integrity: sha512-gKXj5ALrKWQLsYG9jlTRmR/xKluxHV+Z9QEwNIgCfM1/uwPMCuzVVnh5mwTd+OuBZcwSIMbqssNWRm1lE51QaQ==}
@@ -8652,6 +8658,8 @@ snapshots:
       require-from-string: 2.0.2
 
   alien-signals@3.0.0: {}
+
+  animejs@4.4.1: {}
 
   ansi-escapes@4.3.2:
     dependencies:

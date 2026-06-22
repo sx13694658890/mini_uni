@@ -9,6 +9,7 @@ type _LocationUrl =
   "/pages/category/index" |
   "/pages/mine/index" |
   "/pages-sub/mine/address/edit" |
+  "/pages-sub/home-category/list/index" |
   "/pages-sub/mine/address/index" |
   "/pages-sub/mine/member/index" |
   "/pages-sub/mine/orders/index" |
