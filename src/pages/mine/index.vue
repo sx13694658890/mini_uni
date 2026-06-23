@@ -44,6 +44,10 @@ const bottomSpacerHeight = computed(() =>
   `calc(50px + env(safe-area-inset-bottom) + 16px)`,
 )
 
+function goMember() {
+  navigateTo('/pages-sub/mine/member/index')
+}
+
 function goRecharge() {
   navigateTo('/pages-sub/mine/recharge/index')
 }
@@ -95,7 +99,7 @@ function menuItemClass(index: number) {
           </view>
         </view>
 
-        <VipCard />
+        <VipCard @tap="goMember" />
 
         <!-- Balance -->
         <view class="mb-6 flex items-center justify-between gap-3 rounded-xl bg-surface-lowest p-5 shadow-[0_2px_8px_rgba(0,51,102,0.06)]">

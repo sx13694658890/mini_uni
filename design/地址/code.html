@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ocean Fresh - 编辑收货地址</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#d5e3ff",
+                    "tertiary-container": "#25353e",
+                    "on-primary-fixed": "#001b3c",
+                    "tertiary": "#0f2028",
+                    "outline": "#737780",
+                    "on-tertiary-fixed-variant": "#384953",
+                    "surface-container-low": "#f0f3ff",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "error-container": "#ffdad6",
+                    "background": "#f9f9ff",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "surface-tint": "#3a5f94",
+                    "surface-container-highest": "#d8e3fb",
+                    "secondary": "#a43c12",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#fe7e4f",
+                    "on-surface-variant": "#43474f",
+                    "secondary-fixed-dim": "#ffb59c",
+                    "surface": "#f9f9ff",
+                    "primary": "#001e40",
+                    "on-secondary-fixed-variant": "#822800",
+                    "on-tertiary-container": "#8c9ea9",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#380c00",
+                    "inverse-on-surface": "#ecf1ff",
+                    "on-primary-container": "#799dd6",
+                    "outline-variant": "#c3c6d1",
+                    "surface-container": "#e7eeff",
+                    "tertiary-fixed-dim": "#b7c9d5",
+                    "on-tertiary-fixed": "#0c1e26",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#dee8ff",
+                    "secondary-fixed": "#ffdbcf",
+                    "on-surface": "#111c2d",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#a7c8ff",
+                    "surface-variant": "#d8e3fb",
+                    "surface-bright": "#f9f9ff",
+                    "inverse-surface": "#263143",
+                    "tertiary-fixed": "#d3e5f1",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#cfdaf2",
+                    "primary-container": "#003366",
+                    "on-background": "#111c2d",
+                    "on-secondary-container": "#6b1f00",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "stack-lg": "24px",
+                    "gutter": "12px",
+                    "container-margin": "16px",
+                    "section-gap": "32px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "price-display": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "price-display": ["22px", {"lineHeight": "22px", "fontWeight": "700"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            background-color: #f9f9ff;
+        }
+        .input-focus-ring:focus-within {
+            border-color: #003366;
+            box-shadow: 0 0 0 1px #003366;
+        }
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #003366;
+            background-color: #003366;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #003366;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
+<!-- Top AppBar (from Shared Components JSON Logic) -->
+<header class="bg-surface dark:bg-surface-dim shadow-[0_4px_15px_-3px_rgba(0,51,102,0.08)] w-full top-0 sticky flex items-center justify-between px-container-margin h-16 w-full z-40">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 hover:bg-surface-container-high p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">编辑收货地址</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="active:scale-95 duration-200 hover:bg-surface-container-high p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="delete">delete</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 px-container-margin py-stack-lg max-w-2xl mx-auto w-full">
+<!-- Form Container -->
+<div class="space-y-stack-md">
+<!-- Contact Info Section -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="p-gutter space-y-4">
+<!-- Recipient Name -->
+<div class="group">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 ml-1">收货人</label>
+<div class="relative flex items-center border border-outline-variant rounded-lg px-4 py-3 bg-surface focus-within:border-primary-container transition-all">
+<input class="w-full bg-transparent outline-none border-none p-0 text-body-lg font-body-lg placeholder:text-outline/50 focus:ring-0" placeholder="请填写收货人姓名" type="text"/>
+<span class="material-symbols-outlined text-outline-variant group-focus-within:text-primary transition-colors" data-icon="person">person</span>
+</div>
+</div>
+<!-- Phone Number -->
+<div class="group">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 ml-1">手机号码</label>
+<div class="relative flex items-center border border-outline-variant rounded-lg px-4 py-3 bg-surface focus-within:border-primary-container transition-all">
+<input class="w-full bg-transparent outline-none border-none p-0 text-body-lg font-body-lg placeholder:text-outline/50 focus:ring-0" placeholder="请填写手机号码" type="tel"/>
+<span class="material-symbols-outlined text-outline-variant group-focus-within:text-primary transition-colors" data-icon="call">call</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Address Selection Section -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="p-gutter space-y-4">
+<!-- Region Picker -->
+<div class="group">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 ml-1">所在地区</label>
+<button class="w-full flex items-center justify-between border border-outline-variant rounded-lg px-4 py-3 bg-surface text-left group-hover:border-outline transition-all active:scale-[0.99]">
+<span class="text-body-lg font-body-lg text-outline/60">省、市、区、街道</span>
+<span class="material-symbols-outlined text-outline-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Detailed Address -->
+<div class="group">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 ml-1">详细地址</label>
+<div class="relative border border-outline-variant rounded-lg px-4 py-3 bg-surface focus-within:border-primary-container transition-all">
+<textarea class="w-full bg-transparent outline-none border-none p-0 text-body-lg font-body-lg placeholder:text-outline/50 focus:ring-0 resize-none" placeholder="街道门牌、楼层房间号等信息" rows="3"></textarea>
+</div>
+</div>
+</div>
+</section>
+<!-- Additional Settings -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-gutter flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container bg-primary-fixed/30 p-2 rounded-lg" data-icon="verified">verified</span>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">设为默认地址</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">每次下单时将优先使用此地址</p>
+</div>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-outline-variant outline-none right-6" id="toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-200 ease-in-out" for="toggle"></label>
+</div>
+</section>
+<!-- Location Hint Card -->
+<div class="p-container-margin rounded-xl bg-primary-container/5 border border-primary-container/10 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container mt-0.5" data-icon="info">info</span>
+<p class="font-label-sm text-label-sm text-on-primary-fixed-variant leading-relaxed">
+                    为了确保您的海鲜产品能够以最佳新鲜度送达，请准确填写配送地址。我们优先支持冷链配送覆盖区域。
+                </p>
+</div>
+</div>
+<!-- Decorative Spacer for Mobile Bottom Button -->
+<div class="h-32"></div>
+</main>
+<!-- Bottom Action Button Wrapper -->
+<div class="fixed bottom-0 left-0 w-full p-container-margin bg-surface/80 backdrop-blur-md border-t border-outline-variant/20 z-50">
+<div class="max-w-2xl mx-auto flex gap-stack-sm">
+<!-- Save Button -->
+<button class="flex-1 bg-primary-container text-on-secondary font-headline-md text-headline-md py-4 rounded-xl shadow-lg active:scale-95 transition-all duration-200 hover:shadow-xl hover:brightness-110 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="save">save</span>
+                保存并使用
+            </button>
+</div>
+</div>
+<!-- Hidden Bottom Nav for top-level pages (Suppressed here as per Destination Rule for Task-Focused screen) -->
+<script>
+        // Micro-interactions for inputs
+        const inputs = document.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.closest('.group')?.querySelector('label')?.classList.add('text-primary');
+            });
+            input.addEventListener('blur', () => {
+                input.closest('.group')?.querySelector('label')?.classList.remove('text-primary');
+            });
+        });
+
+        // Toggle logic
+        const toggle = document.getElementById('toggle');
+        toggle.addEventListener('change', function() {
+            if(this.checked) {
+                this.nextElementSibling.classList.replace('bg-outline-variant', 'bg-primary-container');
+            } else {
+                this.nextElementSibling.classList.replace('bg-primary-container', 'bg-outline-variant');
+            }
+        });
+    </script>
+</body></html>

@@ -80,6 +80,9 @@ importers:
       '@uni-helper/vite-plugin-uni-pages':
         specifier: ^0.3.19
         version: 0.3.19(vite@5.2.8(@types/node@24.6.2)(sass@1.63.2)(terser@5.39.0))
+      '@vant/area-data':
+        specifier: ^2.1.0
+        version: 2.1.0
       '@vueuse/core':
         specifier: ^13.9.0
         version: 13.9.0(vue@3.5.22(typescript@5.9.3))
@@ -1997,6 +2000,9 @@ packages:
     resolution: {integrity: sha512-v2rFIrBaWGQmSJeKv7us+2OMos2RqdZYpf/seOpf4MFHrmjjiFQ1ZWkTqFyNfUxAwj6VID5frVJhxJfZuEhhug==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0 || ^5.0.0-0 || ^6.0.0-0
+
+  '@vant/area-data@2.1.0':
+    resolution: {integrity: sha512-wx9PrUX7wSUJiFcz8UrcvZfTjV6sTc+7SHcbjGQQzEcv5y+EwOo5uV4ZKdfrR5Hzcw4MA08LQdvXPSEb4nWbug==}
 
   '@vitejs/plugin-legacy@5.3.2':
     resolution: {integrity: sha512-8moCOrIMaZ/Rjln0Q6GsH6s8fAt1JOI3k8nmfX4tXUxE5KAExVctSyOBk+A25GClsdSWqIk2yaUthH3KJ2X4tg==}
@@ -8303,6 +8309,8 @@ snapshots:
       vite: 5.2.8(@types/node@24.6.2)(sass@1.63.2)(terser@5.39.0)
     transitivePeerDependencies:
       - vue
+
+  '@vant/area-data@2.1.0': {}
 
   '@vitejs/plugin-legacy@5.3.2(terser@5.39.0)(vite@5.2.8(@types/node@24.6.2)(sass@1.63.2)(terser@5.39.0))':
     dependencies:
